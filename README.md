@@ -1,22 +1,2 @@
 # namoneeco.github.io
 nksound portfolio
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Your Name - Sound Design</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 40px; }
-        .audio-work { margin: 20px 0; }
-        audio { width: 300px; }
-    </style>
-</head>
-<body>
-    <h1>Your Name - Sound Designer</h1>
-    <div class="audio-work">
-        <h3>Project Title</h3>
-        <audio controls>
-            <source src="your-audio-file.mp3" type="audio/mpeg">
-        </audio>
-    </div>
-</body>
-</html>
