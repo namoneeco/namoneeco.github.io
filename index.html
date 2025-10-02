@@ -1,25 +1,101 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>nksound</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nk sound _ portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            font-family: 'Roboto';
-            margin: 40px;
+            font-family: 'Roboto', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: #cccccc;
+            margin-bottom: 20px;
+        }
+        
+        .tagline {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: #aaaaaa;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .content {
+            text-align: center;
+        }
+        
+        .coming-soon {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #888888;
+            margin-top: 40px;
+            padding: 20px;
+            border: 1px solid #333333;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        
+        /* Optional: Add some subtle animation */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        body {
+            animation: fadeIn 1s ease-in;
         }
     </style>
 </head>
 <body>
-    <h1>hello from nksound</h1>
-    <div class="audio-work">
-        <h3>Project Title</h3>
-        <audio controls>
-            <source src="your-audio-file.mp3" type="audio/mpeg">
-        </audio>
+    <div class="container">
+        <header>
+            <h1>Your Name</h1>
+            <div class="subtitle">Sound Designer</div>
+            <p class="tagline">Creating immersive audio experiences for games and film</p>
+        </header>
+        
+        <main class="content">
+            <!-- Your portfolio content will go here -->
+            <div class="coming-soon">
+                Portfolio coming soon...
+            </div>
+        </main>
     </div>
 </body>
 </html>
