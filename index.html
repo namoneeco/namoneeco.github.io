@@ -153,6 +153,77 @@
         body {
             animation: fadeIn 1s ease-in;
             }
+
+        /* === ADD: Responsive text sizes === */
+    /* For tablets and smaller screens */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 15px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+                letter-spacing: 0.2rem;
+            }
+            
+            .tagline {
+                font-size: 1rem;
+            }
+            
+            .content {
+                font-size: 1rem;
+                padding: 20px;
+            }
+            
+            .content pre {
+                font-size: 0.95rem;
+            }
+            
+            .coming-soon {
+                font-size: 1rem;
+                padding: 15px;
+            }
+        }
+    
+        /* For mobile phones */
+        @media (max-width: 480px) {
+            body {
+                padding: 15px 10px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+                letter-spacing: 0.1rem;
+            }
+            
+            .main-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .content,
+            .image-container {
+                flex: 0 0 100%; /* Makes both sections full width */
+            }
+            
+            .content pre {
+                font-size: 0.9rem;
+            }
+            
+            .coming-soon {
+                font-size: 0.9rem;
+                text-align: center;
+                margin-left: 0;
+            }
+        }
         
     </style>
 </head>
