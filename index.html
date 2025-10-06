@@ -56,25 +56,56 @@
             margin: 0 auto;
         }
         
-       .content {
+          .content {
             text-align: left;
             font-size: 1.2rem;
             font-weight: 400;
             color: #fffdf5;
-            margin: 40px auto 0;
+            margin: 40px 0 0 0;
             padding: 30px;
-            width: 50%;
+            width: 48%;
             max-width: 600px;
             border: 1px solid #333333;
             border-radius: 5px;
-            display: block;
-       }
+            display: inline-block;
+            vertical-align: top;
+        }
+        
+        .image-container {
+            display: inline-block;
+            width: 48%;
+            max-width: 600px;
+            margin: 40px 0 0 2%;
+            padding: 20px;
+            border: 2px solid #fffdf5;
+            border-radius: 5px;
+            vertical-align: top;
+            text-align: center;
+        }
+        
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 3px;
+        }
+        
+        .image-placeholder {
+            width: 100%;
+            height: 300px;
+            background-color: #2a2927;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888888;
+            font-style: italic;
+        }
 
         .content pre {
             white-space: pre-wrap;
             word-wrap: break-word;
             font-family: 'Roboto', sans-serif;
             margin-bottom: 20px;
+            text-indent: 0;
         }
         
         .coming-soon {
@@ -107,21 +138,30 @@
             <div class="subtitle">Sound Design</div>
             <p class="tagline">immersive audio</p>
         </header>
-        <main class="content">
-            <pre>
-            Hi, I’m Nico – a working sound designer on Vancouver Island, Canada.
-                
-            I developed my passion for digital audio during my undergrad in Sydney, Australia, where I lived for 4 years studying Philosophy & Religion. I began recording and mixing bands in small apartments, learning how to translate my ideas and express myself through sound through the computer.
+        <main class="main-content">
+            <div class="content">
+                <pre>
+        Hi, I'm Nico – a working sound designer on Vancouver Island, Canada.
+        
+        I developed my passion for digital audio during my undergrad in Sydney, Australia, where I lived for 4 years studying Philosophy & Religion. I began recording and mixing bands in small apartments, learning how to translate my ideas and express myself through sound through the computer.
+        
+        On return to Canada I began work as a FoH sound engineer for a live music venue. After several years of live audio work, I shifted focus to audiovisual media, working on videos and film.
+        
+        This path led me to games, where I have been using my experience in post production audio to building projects in Wwise, Unreal, and Unity over the past three years.
+        
+        I am self taught and I enjoy collaborating and problem-solving on technical projects.
+                </pre>
+                <div class="coming-soon">
+                    Portfolio soon..
+                </div>
+            </div>
             
-            On return to Canada I began work as a FoH sound engineer for a live music venue. After several years of live audio work, I shifted focus to audiovisual media, working on videos and film.
-            
-            This path led me to games, where I have been using my experience in post production audio to building projects in Wwise, Unreal, and Unity over the past three years.
-            
-            I am self taught and I enjoy collaborating and problem-solving on technical projects. 
-            
-            </pre>
-            <div class="coming-soon">
-                Portfolio soon..
+            <div class="image-container">
+                <div class="image-placeholder">
+                    Your Image Here
+                </div>
+                <!-- Or use an actual image: -->
+                <!-- <img src="your-image.jpg" alt="Description"> -->
             </div>
         </main>
     </div>
