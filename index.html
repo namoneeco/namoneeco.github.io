@@ -29,18 +29,28 @@
             margin: 0 auto;
             }
         
-        header {
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
             position: sticky;
             top: 0;
-            text-align: right;
-            margin-bottom: 60px;
-
+            z-index: 1000;
             border-bottom: 2px solid #000000;
             background-color: #1a1917;
-            padding: 10px 0;
-            
-            
-            }
+            padding: 5px 0;
+            margin-bottom: 60px;
+        }
+
+        .image-header {
+            flex-shrink: 0;
+        }
+
+        .header-text {
+            text-align: right;
+            flex-grow: 1;
+        }
         
         h1 {
             font-size: 3rem;
@@ -138,13 +148,6 @@
             font-style: italic;
             }
 
-        .image-header {
-            width: 100%;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            }
-        
         .coming-soon {
             font-size: 1.2rem;
             font-weight: 400;
@@ -168,7 +171,8 @@
             animation: fadeIn 1s ease-in;
             }
 
-        /* Responsive text sizes for tablets and smaller screens */
+        /* === ADD: Responsive text sizes === */
+    /* For tablets and smaller screens */
         @media (max-width: 768px) {
             body {
                 padding: 20px 15px;
@@ -200,9 +204,24 @@
                 font-size: 1rem;
                 padding: 15px;
             }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            .header-text {
+                text-align: center;
+            }
+
+            .image-header img {
+                width: 60px;
+                margin-bottom: 10px;
+            }
         }
     
-        /* Responsive text sizes for mobile phones */
+        /* For mobile phones */
         @media (max-width: 480px) {
             body {
                 padding: 15px 10px;
@@ -239,6 +258,14 @@
                 text-align: center;
                 margin-left: 0;
             }
+
+            .header-content {
+                padding: 8px 0;
+            }
+
+            .image-header img {
+                width: 50px;
+            }
         }
         
     </style>
@@ -248,14 +275,16 @@
 <body>
     <div class="container">
         <header>
-
+            <div class="header-content">
                 <div class="image-header">
-                    <img src="img/nksound_logo.png" alt="nksound_logo" style="width:17%;">
+                    <img src="img/nksound_logo2.png" alt="nksound_logo" style="width:80px;">
                 </div>
-
-            <h1>nksound</h1>
-            <div class="subtitle">Sound Design</div>
-            <p class="tagline">immersive audio</p>
+                <div class="header-text">
+                    <h1>nksound</h1>
+                    <div class="subtitle">Sound Design</div>
+                    <p class="tagline">immersive audio</p>
+                </div>
+            </div>
         </header>
 
         <!-- video container -->
@@ -297,7 +326,7 @@ I am self taught and I enjoy collaborating and problem-solving on technical proj
             
             <div class="image-container">
                 <div class="image-placeholder">
-                    <img src="img/nksound_logo.png" alt="nksound_logo" style="width:100%;">
+                    <img src="img/nksound_logo2.png" alt="nksound_logo" style="width:100%;">
                 </div>
             </div>
         </main>
