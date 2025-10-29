@@ -13,89 +13,78 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            }
+        }
         
         body {
             font-family: 'Roboto', sans-serif;
             background-color: #1a1917;
             color: #fffdf5;
             line-height: 1.6;
-            min-height: 200vh;
+            min-height: 100vh;
             padding: 40px 20px;
-            }
+            animation: fadeIn 1s ease-in;
+        }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            }
+        }
         
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            width: 100%;
             position: sticky;
             top: 0;
             z-index: 1000;
             border-bottom: 2px solid #000000;
             background-color: #1a1917;
-            padding: 5px 0;
+            padding: 10px 0;
             margin-bottom: 60px;
         }
 
-        .image-header {
-            flex-shrink: 0;
-        }
-
         .image-header img {
-            width: 200px; /* Added this to control image size via CSS */
+            width: 200px;
             height: auto;
         }
 
         .header-text {
             text-align: right;
-            flex-grow: 1;
         }
         
         h1 {
             font-size: 3rem;
             font-weight: 100;
-            margin-bottom: 0px;
+            margin-bottom: 0;
             color: #fffdf5;
-            }
+        }
         
         .subtitle {
             font-size: 1.5rem;
             font-weight: 200;
             color: #f4c21c;
-            margin-bottom: 0px;
+            margin-bottom: 0;
             letter-spacing: 0.4rem;
-            }
+        }
         
         .tagline {
             font-size: 1.1rem;
             font-weight: 100;
             color: #aaaaaa;
-            max-width: 600px;
-            margin: 0 auto;
-            }
+        }
         
-         .video-container {
-            width: 100%;
+        .video-container {
             max-width: 800px;
-            margin: 0 auto 60px auto; /* Centered with bottom margin */
-            }
+            margin: 0 auto 60px;
+        }
         
         .video-wrapper {
             position: relative;
-            width: 100%;
             padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0;
-            overflow: hidden;
             border-radius: 5px;
             border: 1px solid #333333;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            }
+        }
         
         .video-wrapper iframe {
             position: absolute;
@@ -104,54 +93,45 @@
             width: 100%;
             height: 100%;
             border: none;
-            }
+        }
         
         .main-content {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
             gap: 4%;
             margin-top: 40px;
-            }
+        }
         
         .content {
-            text-align: left;
             font-size: 1.2rem;
             font-weight: 400;
-            color: #fffdf5;
             padding: 30px;
-            width: 100%;
             border: 1px solid #333333;
             border-radius: 5px;
-            flex: 0 0 48%; /* This makes it take 48% of the flex container */
-            }
+            flex: 0 0 48%;
+        }
         
         .content pre {
             white-space: pre-wrap;
             word-wrap: break-word;
             font-family: 'Roboto', sans-serif;
             margin-bottom: 20px;
-            text-indent: 0;
-            }
+        }
         
         .image-container {
             padding: 5px;
             border: 1px solid #333333;
             border-radius: 5px;
-            text-align: center;
-            flex: 0 0 48%; /* This makes it take 48% of the flex container */
-            }
+            flex: 0 0 48%;
+        }
         
         .image-placeholder {
-            width: 100%;
             height: 300px;
             background-color: #363430;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #888888;
-            font-style: italic;
-            }
+        }
 
         .coming-soon {
             font-size: 1.2rem;
@@ -161,23 +141,15 @@
             padding: 20px;
             border: 1px solid #333333;
             border-radius: 5px;
-            display: block;
-            width: auto;
             margin-left: auto;
-            }
+        }
         
-        /* Optional: Add some subtle animation */
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
-            }
-        
-        body {
-            animation: fadeIn 1s ease-in;
-            }
+        }
 
-        /* === ADD: Responsive text sizes === */
-    /* For tablets and smaller screens */
+        /* === Responsive Design === */
         @media (max-width: 768px) {
             body {
                 padding: 20px 15px;
@@ -201,10 +173,6 @@
                 padding: 20px;
             }
             
-            .content pre {
-                font-size: 0.95rem;
-            }
-            
             .coming-soon {
                 font-size: 1rem;
                 padding: 15px;
@@ -213,7 +181,6 @@
             .header-content {
                 flex-direction: column;
                 text-align: center;
-                padding: 10px 0;
             }
 
             .header-text {
@@ -221,12 +188,11 @@
             }
 
             .image-header img {
-                width: 150px; /* Adjusted for tablets */
+                width: 150px;
                 margin-bottom: 10px;
             }
         }
     
-        /* For mobile phones */
         @media (max-width: 480px) {
             body {
                 padding: 15px 10px;
@@ -246,12 +212,9 @@
                 gap: 20px;
             }
             
-            .content {
-                flex: 0 0 100%;
-            }
-
+            .content,
             .image-container {
-                flex: 0 0 20%;
+                flex: 0 0 100%;
             }
             
             .content pre {
@@ -264,25 +227,19 @@
                 margin-left: 0;
             }
 
-            .header-content {
-                padding: 8px 0;
-            }
-
             .image-header img {
-                width: 120px; /* Adjusted for mobile */
+                width: 120px;
             }
         }
-        
     </style>
 </head>
-
 
 <body>
     <div class="container">
         <header>
             <div class="header-content">
                 <div class="image-header">
-                    <img src="img/nksound_logo.png" alt="nksound_logo">
+                    <img src="img/nksound_logo.png" alt="nksound logo">
                 </div>
                 <div class="header-text">
                     <h1>nksound</h1>
@@ -292,13 +249,11 @@
             </div>
         </header>
 
-        <!-- video container -->
         <div class="video-container">
             <div class="video-wrapper">
                 <iframe 
                     src="https://www.youtube-nocookie.com/embed/4S3ipnnOekw?rel=0" 
                     title="YouTube video player" 
-                    frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     allowfullscreen>
                 </iframe>
@@ -309,13 +264,13 @@
             <div class="content">
                 <pre>
 Hi, I'm Nico. I'm a sound designer on Vancouver Island, Canada.
-        
+
 I got my start in digital audio during my undergrad in Sydney, Australia, where I lived for 4 years studying Philosophy & Religion. I began recording and mixing bands in small apartments, learning how to translate my ideas and express myself through sound using the computer.
-        
+
 On return to Canada I began work as a FoH sound engineer for a live music venue. After several years of live audio work, I gradually worked more on audiovisual media primarily post production for film.
-        
+
 My path in audio would eventually lead me back to games, where I have been using my experience in post production audio to building projects in Wwise, Unreal, and Unity over the past three years.
-        
+
 I am self taught and I enjoy collaborating and problem-solving on technical projects.
 
 <a href="https://drive.google.com/drive/folders/1eTLHjijAGSwK0U-KXaDN5UYu2ktORaiH?usp=drive_link" style="color: #f4c21c;">My CV</a>
@@ -331,7 +286,7 @@ I am self taught and I enjoy collaborating and problem-solving on technical proj
             
             <div class="image-container">
                 <div class="image-placeholder">
-                    <img src="img/nksound_logo2.png" alt="nksound_logo" style="width:100%;">
+                    <img src="img/nksound_logo2.png" alt="nksound logo" style="width:100%;">
                 </div>
             </div>
         </main>
