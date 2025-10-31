@@ -37,7 +37,6 @@
             padding: 0px 10px;
             background-color: #1a1917;
             border: 2px solid #363430;
-            /*border-bottom: 2px solid #363430;*/
             border-bottom-left-radius: 10px 50px;
             margin-bottom: 60px;
         }
@@ -117,6 +116,14 @@
             flex: 0 0 36%;
         }
         
+        .bio-header {
+            font-size: 3rem;
+            font-weight: 100;
+            color: #fffdf5;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
         .content pre {
             white-space: pre-wrap;
             word-wrap: break-word;
@@ -129,24 +136,16 @@
             border: 1px solid #333333;
             border-radius: 5px;
             flex: 0 0 58%;
+            display: flex;
             justify-content: center;
-            align-items:center;
+            align-items: center;
         }
         
-        .image-placeholder {
-            height: 600px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .image-placeholder img {
+        .image-container img {
             width: 300px;
-            max-height: 100%;
-            width: auto;
+            max-width: 100%;
+            height: auto;
             display: block;
-            margin: 0 auto;
         }
         
         @keyframes fadeIn {
@@ -178,20 +177,27 @@
                 padding: 20px;
             }
             
+            .bio-header {
+                font-size: 2.2rem;
             }
-
+            
+            /* FIXED: Keep header aligned left on tablets */
             .header-content {
-                flex-direction: column;
-                text-align: center;
+                flex-direction: row; /* Keep horizontal layout */
+                text-align: left; /* Keep left alignment */
             }
 
             .header-text {
-                text-align: center;
+                text-align: right; /* Keep right alignment */
             }
 
             .image-header img {
                 width: 150px;
-                margin-bottom: 10px;
+                margin-bottom: 0; /* Remove bottom margin since we're not stacking */
+            }
+
+            .image-container img {
+                width: 250px; /* Slightly smaller on tablets */
             }
         }
     
@@ -209,6 +215,10 @@
                 letter-spacing: 0.1rem;
             }
             
+            .bio-header {
+                font-size: 1.8rem;
+            }
+            
             .main-content {
                 flex-direction: column;
                 gap: 20px;
@@ -216,17 +226,30 @@
             
             .content,
             .image-container {
-                flex: 0 0 60%;
+                flex: 0 0 100%;
             }
             
             .content pre {
                 font-size: 0.9rem;
             }
             
+            /* FIXED: Stack header vertically on mobile but keep proper alignment */
+            .header-content {
+                flex-direction: column;
+                text-align: center; /* Center when stacked */
+            }
+
+            .header-text {
+                text-align: center; /* Center when stacked */
             }
 
             .image-header img {
                 width: 120px;
+                margin-bottom: 10px; /* Add space when stacked */
+            }
+
+            .image-container img {
+                width: 200px; /* Smaller on mobile */
             }
         }
     </style>
@@ -259,14 +282,8 @@
         </div>
         
         <main class="main-content">
-            
-            <div class="header-text">
-                    <h1>nksound</h1>
-                    <div class="subtitle">Sound Design</div>
-                    <p class="tagline">immersive audio</p>
-                </div>
-            
             <div class="content">
+                <div class="bio-header">BIO</div>
                 <pre>
 Hi, I'm Nico. I'm a sound designer on Vancouver Island, Canada.
 
@@ -286,9 +303,7 @@ I am self taught and I enjoy collaborating and problem-solving on technical proj
                 </pre>
             </div>
             <div class="image-container">
-                <div class="image-placeholder">
-                    <img src="img/img_2225.jpg" alt="img_2225">
-                </div>
+                <img src="img/img_2225.jpg" alt="img_2225">
             </div>
         </main>
     </div>
