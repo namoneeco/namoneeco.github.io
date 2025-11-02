@@ -61,9 +61,9 @@
         .header-nav a {
             color: #fffdf5;
             text-decoration: none;
-            font-weight: 300;
-            font-size: 1.1rem;
-            transition: color 0.3s ease;
+            font-weight: 200;
+            font-size: 1.5rem;
+            transition: color 0.2s ease;
         }
 
         .header-nav a:hover {
@@ -92,7 +92,7 @@
         .tagline {
             font-size: 1.1rem;
             font-weight: 100;
-            color: #aaaaaa;
+            color: #fffdf5;
         }
         
         .video-container {
@@ -157,15 +157,25 @@
             flex: 0 0 40%;
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* Changed from 'top' to 'flex-start' */
+/*            align-items: flex-start; /* Changed from 'top' to 'flex-start' */
+            align-items: anchor-center; 
         }
         
         .image-container img {
             width: auto;
-            max-width: 100%; /* Simplified - remove the min() function */
+            max-width: 100%; 
             height: auto;
             display: block;
             object-fit: contain; /* This ensures aspect ratio is maintained */
+        }
+
+        "root {
+            --header-height: 100px;
+        }
+
+        #demoreel, 
+        #bio {
+            scroll-margin-top: var(--header-height);
         }
         
         @keyframes fadeIn {
