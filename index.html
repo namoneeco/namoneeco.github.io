@@ -139,16 +139,15 @@
             flex: 0 0 40%;
             display: flex;
             justify-content: center;
-            align-items: top;
+            align-items: flex-start; /* Changed from 'top' to 'flex-start' */
         }
         
         .image-container img {
-            /*width: 500px;
-            max-width: 100%;*/
             width: auto;
-            max-width: min(100%, 500px);
+            max-width: 100%; /* Simplified - remove the min() function */
             height: auto;
             display: block;
+            object-fit: contain; /* This ensures aspect ratio is maintained */
         }
         
         @keyframes fadeIn {
@@ -183,10 +182,9 @@
                 font-size: 2.2rem;
             }
             
-            /* FIXED: Keep header aligned left on tablets */
             .header-content {
-                flex-direction: row; /* Keep horizontal layout */
-                text-align: left; /* Keep left alignment */
+                flex-direction: row;
+                text-align: left;
             }
 
             .heading-text {
@@ -195,11 +193,11 @@
 
             .image-header img {
                 width: 150px;
-                margin-bottom: 0; /* Remove bottom margin since we're not stacking */
+                margin-bottom: 0;
             }
 
             .image-container img {
-                max-width: min(100%, 250px); /* Slightly smaller on tablets */
+                max-width: 80%; /* Use percentage instead of fixed size */
             }
         }
     
@@ -234,23 +232,22 @@
                 font-size: 0.9rem;
             }
             
-            /* FIXED: Stack header vertically on mobile but keep proper alignment */
             .header-content {
                 flex-direction: column;
-                text-align: center; /* Center when stacked */
+                text-align: center;
             }
 
             .heading-text {
-                text-align: center; /* Center when stacked */
+                text-align: center;
             }
 
             .image-header img {
                 width: 120px;
-                margin-bottom: 10px; /* Add space when stacked */
+                margin-bottom: 10px;
             }
 
             .image-container img {
-                max-width: min(100%, 200px); /* Smaller on mobile */
+                max-width: 70%; /* Use percentage instead of fixed size */
             }
         }
     </style>
@@ -267,7 +264,7 @@
                     <h1>nksound</h1>
                     <div class="subtitle">Sound Design</div>
                     <p class="tagline">immersive audio</p> -->
-                </div>
+                <!-- </div> --> <!-- This was the extra closing div -->
             </div>
         </header>
 
@@ -310,7 +307,7 @@ I am self taught and I enjoy collaborating and problem-solving on technical proj
                 </pre>
             </div>
             <div class="image-container">
-                <img src="img/img_2225.jpg" alt="img_2225" aspect-ratio:1>
+                <img src="img/img_2225.jpg" alt="img_2225"> <!-- Removed incorrect aspect-ratio attribute -->
             </div>
         </main>
     </div>
