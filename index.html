@@ -143,11 +143,12 @@
         }
         
         .image-container img {
-            width: 500px;
-            max-width: 100%;
+            /*width: 500px;
+            max-width: 100%;*/
+            width: auto;
+            max-width: min(100%, 500px);
             height: auto;
             display: block;
-            aspect ratio: 1;
         }
         
         @keyframes fadeIn {
@@ -198,7 +199,7 @@
             }
 
             .image-container img {
-                width: 250px; /* Slightly smaller on tablets */
+                max-width: min(100%, 250px); /* Slightly smaller on tablets */
             }
         }
     
@@ -249,7 +250,7 @@
             }
 
             .image-container img {
-                width: 200px; /* Smaller on mobile */
+                max-width: min(100%, 200px); /* Smaller on mobile */
             }
         }
     </style>
