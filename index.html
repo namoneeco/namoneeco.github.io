@@ -53,6 +53,24 @@
             height: auto;
         }
 
+        .header-nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .header-nav a {
+            color: #fffdf5;
+            text-decoration: none;
+            font-weight: 300;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .header-nav a:hover {
+            color: #f4c21c;
+        }
+
+
         .heading-text {
             text-align: center;
         }
@@ -247,7 +265,7 @@
             }
 
             .image-container img {
-                max-width: 70%; /* Use percentage instead of fixed size */
+                max-width: 70%; 
             }
         }
     </style>
@@ -260,15 +278,17 @@
                 <div class="image-header">
                     <img src="img/nksound_logo3.png" alt="nksound logo">
                 </div>
-                <!-- <div class="header-text">
-                    <h1>nksound</h1>
-                    <div class="subtitle">Sound Design</div>
+                <nav class="header-nav">
+                    <a href="#demoreel">reel</a>
+                    <a href="#bio">bio</a>
+                </nav>
+                    <!--<h1>nksound</h1>
+                    <!--<div class="subtitle">Sound Design</div>
                     <p class="tagline">immersive audio</p> -->
-                <!-- </div> --> <!-- This was the extra closing div -->
             </div>
         </header>
 
-        <div class="video-container">
+        <div class="video-container" id="demoreel">
             <div class="video-wrapper">
                 <iframe 
                     src="https://www.youtube-nocookie.com/embed/4S3ipnnOekw?rel=0" 
@@ -285,7 +305,7 @@
         
         <main class="main-content">
             <div class="content">
-                <div class="bio-header">
+                <div class="bio-header" id="bio">
                     BIO
                 </div>
                 <pre>
