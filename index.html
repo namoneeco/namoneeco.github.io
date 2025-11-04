@@ -117,38 +117,6 @@
             border: none;
         }
         
-        /* Simple Splash Image Overlay */
-        .video-splash {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            cursor: pointer;
-            z-index: 2;
-            transition: opacity 0.3s ease;
-        }
-        
-        .video-splash img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 5px;
-        }
-        
-        .video-splash:hover {
-            opacity: 0.9;
-        }
-        
-        /* Hide splash when target is active */
-        .video-wrapper:target .video-splash {
-            display: none;
-        }
-        
-        .video-wrapper:target iframe {
-            z-index: 1;
-        }
-        
         .main-content {
             display: flex;
             justify-content: space-between;
@@ -184,11 +152,13 @@
         
         .image-container {
             padding: 5px;
+/*            border: 1px solid #333333;   */
             border-radius: 5px;
             flex: 0 0 40%;
             display: flex;
             justify-content: center;
-            align-items: center;
+/*            align-items: flex-start; /* Changed from 'top' to 'flex-start'   */
+            align-items: anchor-center; 
         }
         
         .image-container img {
@@ -196,7 +166,7 @@
             max-width: 100%; 
             height: auto;
             display: block;
-            object-fit: contain;
+            object-fit: contain; /* This ensures aspect ratio is maintained */
         }
 
         :root {
@@ -255,7 +225,7 @@
             }
 
             .image-container img {
-                max-width: 80%;
+                max-width: 80%; /* Use percentage instead of fixed size */
             }
         }
     
@@ -322,15 +292,14 @@
                     <a href="#demoreel">reel</a>
                     <a href="#bio">bio</a>
                 </nav>
+                    <!--<h1>nksound</h1>
+                    <!--<div class="subtitle">Sound Design</div>
+                    <p class="tagline">immersive audio</p> -->
             </div>
         </header>
 
         <div class="video-container" id="demoreel">
-            <div class="video-wrapper" id="videoPlayer">
-                <!-- Clickable splash image that hides when clicked -->
-                <a href="#videoPlayer" class="video-splash">
-                    <img src="img/youtubesplash0.png" alt="Play video">
-                </a>
+            <div class="video-wrapper">
                 <iframe 
                     src="https://www.youtube-nocookie.com/embed/4S3ipnnOekw?rel=0" 
                     title="YouTube video player" 
@@ -368,7 +337,7 @@ I am self taught and I enjoy collaborating and problem-solving on technical proj
                 </pre>
             </div>
             <div class="image-container">
-                <img src="img/img_2225.jpg" alt="img_2225">
+                <img src="img/img_2225.jpg" alt="img_2225"> <!-- Removed incorrect aspect-ratio attribute -->
             </div>
         </main>
     </div>
