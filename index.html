@@ -152,13 +152,11 @@
         
         .image-container {
             padding: 5px;
-/*            border: 1px solid #333333;   */
             border-radius: 5px;
             flex: 0 0 40%;
             display: flex;
             justify-content: center;
-/*            align-items: flex-start; /* Changed from 'top' to 'flex-start'   */
-            align-items: anchor-center; 
+            align-items: center; /* Fixed from anchor-center */
         }
         
         .image-container img {
@@ -166,7 +164,29 @@
             max-width: 100%; 
             height: auto;
             display: block;
-            object-fit: contain; /* This ensures aspect ratio is maintained */
+            object-fit: contain;
+        }
+
+        /* Projects Section */
+        .projects-section {
+            margin-top: 80px;
+            text-align: center;
+        }
+
+        .projects-header {
+            font-size: 3rem;
+            font-weight: 100;
+            color: #fffdf5;
+            margin-bottom: 40px;
+        }
+
+        .projects-content {
+            font-size: 1.2rem;
+            font-weight: 400;
+            padding: 40px;
+            border: 1px solid #333333;
+            border-radius: 5px;
+            text-align: center;
         }
 
         :root {
@@ -174,7 +194,8 @@
         }
 
         #demoreel, 
-        #bio {
+        #bio,
+        #projects {
             scroll-margin-top: var(--header-height);
         }
         
@@ -210,6 +231,15 @@
                 font-size: 2.2rem;
             }
             
+            .projects-header {
+                font-size: 2.2rem;
+            }
+            
+            .projects-content {
+                font-size: 1rem;
+                padding: 20px;
+            }
+            
             .header-content {
                 flex-direction: row;
                 text-align: left;
@@ -225,7 +255,7 @@
             }
 
             .image-container img {
-                max-width: 80%; /* Use percentage instead of fixed size */
+                max-width: 80%;
             }
         }
     
@@ -243,6 +273,10 @@
             }
             
             .bio-header {
+                font-size: 1.8rem;
+            }
+            
+            .projects-header {
                 font-size: 1.8rem;
             }
             
@@ -291,10 +325,8 @@
                 <nav class="header-nav">
                     <a href="#demoreel">reel</a>
                     <a href="#bio">bio</a>
+                    <a href="#projects">projects</a>
                 </nav>
-                    <!--<h1>nksound</h1>
-                    <!--<div class="subtitle">Sound Design</div>
-                    <p class="tagline">immersive audio</p> -->
             </div>
         </header>
 
@@ -337,9 +369,17 @@ I am self taught and I enjoy collaborating and problem-solving on technical proj
                 </pre>
             </div>
             <div class="image-container">
-                <img src="img/img_2225.jpg" alt="img_2225"> <!-- Removed incorrect aspect-ratio attribute -->
+                <img src="img/img_2225.jpg" alt="img_2225">
             </div>
         </main>
+
+        <section class="projects-section" id="projects">
+            <div class="projects-header">PROJECTS</div>
+            <div class="projects-content">
+                <p>Projects coming soon...</p>
+                <!-- You can add your project content here later -->
+            </div>
+        </section>
     </div>
 </body>
 </html>
