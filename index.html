@@ -5,253 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>nksound</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-
-    <style>
-        /* =========================
-           RESET
-        ========================= */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* =========================
-           SPACING SYSTEM
-        ========================= */
-        :root {
-            --space-sm: 20px;
-            --space-md: 40px;
-            --space-lg: 60px;
-            --space-xl: 80px;
-        }
-
-        /* =========================
-           BASE
-        ========================= */
-        body {
-            font-family: 'Roboto', sans-serif;
-            background: #1a1917;
-            color: #fffdf5;
-            line-height: 1.6;
-            padding: var(--space-md);
-            animation: fadeIn 1s ease-in;
-        }
-
-        .container {
-            max-width: 1440px;
-            margin: 0 auto;
-        }
-
-        section {
-            margin-bottom: var(--space-xl);
-        }
-
-        /* =========================
-           HEADER
-        ========================= */
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: #1a1917;
-            border: 2px solid #363430;
-            border-bottom-left-radius: 10px 50px;
-            margin-bottom: var(--space-xl);
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: var(--space-sm);
-        }
-
-        .header-nav {
-            display: flex;
-            gap: var(--space-md);
-        }
-
-        .header-nav a {
-            color: #fffdf5;
-            text-decoration: none;
-            font-weight: 300;
-            font-size: 1.5rem;
-            transition: color 0.2s ease;
-        }
-
-        .header-nav a:hover {
-            color: #f4c21c;
-        }
-
-        /* =========================
-           TYPOGRAPHY
-        ========================= */
-        h2 {
-            font-size: 3rem;
-            font-weight: 100;
-            margin-bottom: var(--space-lg);
-            padding-left: 100px;
-        }
-
-        h3 {
-            font-size: 1.5rem;
-            font-weight: 400;
-            margin-top: var(--space-md);
-            margin-bottom: var(--space-sm);
-        }
-
-        .content p {
-            margin-bottom: var(--space-sm);
-        }
-
-        .highlight {
-            color: #f4c21c;
-            text-decoration: none;
-        }
-
-        .highlight:hover {
-            text-decoration: underline;
-        }
-
-        /* =========================
-           VIDEO
-        ========================= */
-        .video-container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%;
-            border: 1px solid #333;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-
-        .video-wrapper iframe {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .video-item {
-            flex: 1;
-            min-width: 0;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .video-description {
-            margin-top: 10px;
-            font-size: 1rem;
-            font-weight: 300;
-            color: #fffdf5;
-        }
-
-        .videos-row {
-            display: flex;
-            gap: var(--space-md);
-            margin-bottom: var(--space-md);
-        }
-
-        /* =========================
-           BIO LAYOUT
-        ========================= */
-        .main-content {
-            display: flex;
-            gap: var(--space-md);
-            align-items: flex-start; /* prevents text box stretching */
-        }
-
-        .content {
-            flex: 0 0 50%;
-            padding: var(--space-md);
-            border: 1px solid #333;
-            border-radius: 5px;
-            font-size: 1.1rem;
-        }
-
-        .image-container {
-            flex: 0 0 44%;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-        }
-
-        .image-container img {
-            max-width: 100%;
-            border-radius: 5px;
-        }
-
-        /* =========================
-           GAMES SECTION
-        ========================= */
-        .games-section {
-            display: flex;
-            justify-content: center;
-        }
-
-        .games-box {
-            max-width: 700px;
-            width: 100%;
-            padding: 20px 30px;
-            border: 1px solid #333;
-            border-radius: 5px;
-            text-align: center;
-            margin: var(--space-md) auto;
-        }
-
-        /* =========================
-           PROJECTS
-        ========================= */
-        .project-subsection {
-            margin-bottom: var(--space-lg);
-            padding: 0 100px;
-        }
-
-        /* =========================
-           ANIMATION
-        ========================= */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        /* =========================
-           RESPONSIVE
-        ========================= */
-        @media (max-width: 768px) {
-
-            body {
-                padding: var(--space-sm);
-            }
-
-            h2 {
-                font-size: 2.2rem;
-                padding-left: var(--space-sm);
-            }
-
-            .project-subsection {
-                padding: 0 var(--space-sm);
-            }
-
-            .main-content {
-                flex-direction: column;
-            }
-
-            .videos-row {
-                flex-direction: column;
-                gap: var(--space-sm);
-            }
-        }
-
-    </style>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -281,7 +36,7 @@
 
         <!-- BIO -->
         <section id="bio">
-            <h2>Bio</h2>
+            <h2>BIO</h2>
             <div class="main-content">
 
                 <div class="content">
@@ -323,7 +78,7 @@
 
         <!-- PROJECTS -->
         <section id="projects">
-            <h2>Projects</h2>
+            <h2>PROJECTS</h2>
 
             <div class="project-subsection">
                 <h3>Technical Design</h3>
@@ -404,3 +159,4 @@
     </div>
 </body>
 </html>
+
