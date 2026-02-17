@@ -1,259 +1,390 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>nksound</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nksound</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-<style>
-* { margin:0; padding:0; box-sizing:border-box; }
+    <style>
+        /* =========================
+           RESET
+        ========================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    font-family:'Roboto',sans-serif;
-    background:#1a1917;
-    color:#fffdf5;
-    line-height:1.6;
-    padding:20px;
-    animation:fadeIn 1s ease-in;
-}
+        /* =========================
+           SPACING SYSTEM
+        ========================= */
+        :root {
+            --space-sm: 20px;
+            --space-md: 40px;
+            --space-lg: 60px;
+            --space-xl: 80px;
+        }
 
-.container { max-width:1440px; margin:0 auto; }
+        /* =========================
+           BASE
+        ========================= */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #1a1917;
+            color: #fffdf5;
+            line-height: 1.6;
+            padding: var(--space-md);
+            animation: fadeIn 1s ease-in;
+        }
 
-header {
-    position:sticky;
-    top:0;
-    z-index:1000;
-    background:#1a1917;
-    border:2px solid #363430;
-    border-bottom-left-radius:10px 50px;
-    margin-bottom:60px;
-}
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+        }
 
-.header-content {
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px;
-}
+        section {
+            margin-bottom: var(--space-xl);
+        }
 
-.header-nav { display:flex; gap:2rem; }
+        /* =========================
+           HEADER
+        ========================= */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #1a1917;
+            border: 2px solid #363430;
+            border-bottom-left-radius: 10px 50px;
+            margin-bottom: var(--space-xl);
+        }
 
-.header-nav a {
-    color:#fffdf5;
-    text-decoration:none;
-    font-weight:200;
-    font-size:1.5rem;
-}
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-sm);
+        }
 
-.header-nav a:hover { color:#f4c21c; }
+        .header-nav {
+            display: flex;
+            gap: var(--space-md);
+        }
 
-h2 {
-    font-size:3rem;
-    font-weight:100;
-    margin-bottom:30px;
-    padding-left:100px;
-}
+        .header-nav a {
+            color: #fffdf5;
+            text-decoration: none;
+            font-weight: 300;
+            font-size: 1.5rem;
+            transition: color 0.2s ease;
+        }
 
-h3 {
-    font-size:1.5rem;
-    font-weight:300;
-    margin:25px 0 15px;
-}
+        .header-nav a:hover {
+            color: #f4c21c;
+        }
 
-.video-container { max-width:1000px; margin:0 auto; }
+        /* =========================
+           TYPOGRAPHY
+        ========================= */
+        h2 {
+            font-size: 3rem;
+            font-weight: 100;
+            margin-bottom: var(--space-lg);
+            padding-left: 100px;
+        }
 
-.video-wrapper {
-    position:relative;
-    padding-bottom:56.25%;
-    border:1px solid #333;
-    border-radius:5px;
-    box-shadow:0 4px 8px rgba(0,0,0,0.2);
-}
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-top: var(--space-md);
+            margin-bottom: var(--space-sm);
+        }
 
-.video-wrapper iframe {
-    position:absolute;
-    top:0; left:0;
-    width:100%; height:100%;
-    border:none;
-}
+        .content p {
+            margin-bottom: var(--space-sm);
+        }
 
-.main-content {
-    display:flex;
-    gap:4%;
-    margin-bottom:40px;
-}
+        .highlight {
+            color: #f4c21c;
+            text-decoration: none;
+        }
 
-.content {
-    flex:0 0 50%;
-    padding:30px;
-    border:1px solid #333;
-    border-radius:5px;
-    font-size:1.1rem;
-}
+        .highlight:hover {
+            text-decoration: underline;
+        }
 
-.content p { margin-bottom:18px; }
+        /* =========================
+           VIDEO
+        ========================= */
+        .video-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
 
-.highlight { color:#f4c21c; text-decoration:none; }
-.highlight:hover { text-decoration:underline; }
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            border: 1px solid #333;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
 
-.image-container {
-    flex:0 0 44%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
+        .video-wrapper iframe {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
 
-.image-container img { max-width:100%; border-radius:5px; }
+        /* =========================
+           BIO LAYOUT
+        ========================= */
+        .main-content {
+            display: flex;
+            gap: var(--space-md);
+        }
 
-.project-subsection {
-    margin-bottom:60px;
-    padding:0 100px;
-}
+        .content {
+            flex: 0 0 50%;
+            padding: var(--space-md);
+            border: 1px solid #333;
+            border-radius: 5px;
+            font-size: 1.1rem;
+        }
 
-.videos-row {
-    display:flex;
-    gap:3%;
-    margin-bottom:30px;
-}
+        .image-container {
+            flex: 0 0 44%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-.video-item { flex:1; min-width:0; }
+        .image-container img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
 
-@keyframes fadeIn {
-    from {opacity:0;}
-    to {opacity:1;}
-}
+        /* =========================
+           GAMES SECTION
+        ========================= */
+        .games-section {
+            display: flex;
+            justify-content: center;
+        }
 
-@media(max-width:768px){
-    h2 { font-size:2.2rem; padding-left:20px; }
-    .project-subsection { padding:0 20px; }
-    .main-content { flex-direction:column; }
-    .videos-row { flex-direction:column; gap:20px; }
-}
-</style>
+        .games-box {
+            max-width: 700px;
+            width: 100%;
+            padding: var(--space-md);
+            border: 1px solid #333;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        /* =========================
+           PROJECTS
+        ========================= */
+        .project-subsection {
+            margin-bottom: var(--space-lg);
+            padding: 0 100px;
+        }
+
+        .videos-row {
+            display: flex;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-md);
+        }
+
+        .video-item {
+            flex: 1;
+            min-width: 0;
+        }
+
+        /* =========================
+           ANIMATION
+        ========================= */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+        @media (max-width: 768px) {
+
+            body {
+                padding: var(--space-sm);
+            }
+
+            h2 {
+                font-size: 2.2rem;
+                padding-left: var(--space-sm);
+            }
+
+            .project-subsection {
+                padding: 0 var(--space-sm);
+            }
+
+            .main-content {
+                flex-direction: column;
+            }
+
+            .videos-row {
+                flex-direction: column;
+                gap: var(--space-sm);
+            }
+        }
+
+    </style>
 </head>
 
 <body>
-<div class="container">
+    <div class="container">
 
-<header>
-<div class="header-content">
-<img src="img/nksound_logo3.png" alt="nksound logo" width="170">
-<nav class="header-nav">
-<a href="#demoreel">reel</a>
-<a href="#bio">bio</a>
-<a href="#projects">projects</a>
-</nav>
-</div>
-</header>
+        <header>
+            <div class="header-content">
+                <img src="img/nksound_logo3.png" alt="nksound logo" width="170">
+                <nav class="header-nav">
+                    <a href="#demoreel">reel</a>
+                    <a href="#bio">bio</a>
+                    <a href="#projects">projects</a>
+                </nav>
+            </div>
+        </header>
 
-<section id="demoreel" class="video-container">
-<div class="video-wrapper">
-<iframe src="https://www.youtube-nocookie.com/embed/4S3ipnnOekw?rel=0"
-title="Game Audio Demo Reel"
-loading="lazy"
-allowfullscreen></iframe>
-</div>
-</section>
+        <!-- DEMO REEL -->
+        <section id="demoreel" class="video-container">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube-nocookie.com/embed/4S3ipnnOekw?rel=0"
+                        title="Game Audio Demo Reel"
+                        loading="lazy"
+                        allowfullscreen></iframe>
+            </div>
+        </section>
 
-<section id="bio">
-<h2>Bio</h2>
+        <!-- BIO -->
+        <section id="bio">
+            <h2>Bio</h2>
+            <div class="main-content">
 
-<div class="main-content">
-<div class="content">
+                <div class="content">
+                    <p>Hi! I'm Nico, a sound designer living and working on Vancouver Island, Canada.</p>
 
-<p>Hi! I'm Nico, a sound designer living and working on Vancouver Island, Canada.</p>
+                    <p>I got my start in digital audio during my undergrad in Sydney, Australia, studying Philosophy & Religion. I began recording bands and translating ideas into digital production.</p>
 
-<p>I got my start in digital audio during my undergrad in Sydney, Australia, studying Philosophy & Religion. I began recording bands and translating ideas into digital production.</p>
+                    <p>Back in Canada I worked as a FoH engineer before moving into film post production.</p>
 
-<p>Back in Canada I worked as a FoH engineer before moving into film post production.</p>
+                    <p>My path has led me into game audio, building projects in Unreal, Wwise, and Unity.</p>
 
-<p>My path has led me into game audio, building projects in Unreal, Wwise, and Unity.</p>
+                    <p>I am self taught and enjoy collaborating and solving technical problems.</p>
 
-<p>I am self taught and enjoy collaborating and solving technical problems.</p>
+                    <p>
+                        <a href="https://drive.google.com/drive/folders/1eTLHjijAGSwK0U-KXaDN5UYu2ktORaiH?usp=drive_link" class="highlight">My CV</a> |
+                        <a href="https://www.imdb.com/name/nm15894030/" class="highlight">IMDB Page</a>
+                    </p>
 
-<p>
-<a href="https://drive.google.com/drive/folders/1eTLHjijAGSwK0U-KXaDN5UYu2ktORaiH?usp=drive_link" class="highlight">My CV</a> |
-<a href="https://www.imdb.com/name/nm15894030/" class="highlight">IMDB Page</a>
-</p>
+                    <h3>Main Skills</h3>
+                    <p><em>Unreal, Wwise, FMOD, Reaper, Logic Pro, Pro Tools, Ableton Live, RX10, ADR, Field Recording & Sound Sourcing</em></p>
 
-<h3>Main Skills</h3>
-<p><em>Unreal, Wwise, FMOD, Reaper, Logic Pro, Pro Tools, Ableton Live, RX10, ADR, Field Recording & Sound Sourcing</em></p>
+                    <h3>Additional</h3>
+                    <p><em>Jira, DaVinci Resolve, Sibelius, Music Composition</em></p>
+                </div>
 
-<h3>Additional</h3>
-<p><em>Jira, DaVinci Resolve, Sibelius, Music Composition</em></p>
+                <div class="image-container">
+                    <img src="img/img_2225.jpg" alt="Portrait of Nico">
+                </div>
 
-<h3>Currently Playing</h3>
-<p><em>Valheim, Sekiro, Ape Out, Lethal Company</em></p>
+            </div>
+        </section>
 
-<h3>Past Favourites</h3>
-<p><em>Fallout 3, Elden Ring, Hylics, Wind Waker, Pokemon Crystal</em></p>
+        <!-- GAMES SECTION -->
+        <section class="games-section">
+            <div class="content games-box">
+                <h3>Currently Playing</h3>
+                <p><em>Valheim, Sekiro, Ape Out, Lethal Company</em></p>
 
-</div>
+                <h3>Past Favourites</h3>
+                <p><em>Fallout 3, Elden Ring, Hylics, Wind Waker, Pokemon Crystal</em></p>
+            </div>
+        </section>
 
-<div class="image-container">
-<img src="img/img_2225.jpg" alt="Portrait of Nico">
-</div>
+        <!-- PROJECTS -->
+        <section id="projects">
+            <h2>Projects</h2>
 
-</div>
-</section>
+            <div class="project-subsection">
+                <h3>Technical Design</h3>
+                <div class="videos-row">
 
-<section id="projects">
-<h2>Projects</h2>
+                    <div class="video-item">
+                        <div class="video-wrapper">
+                            <iframe src="https://www.youtube-nocookie.com/embed/e1F-PdEmDQI" loading="lazy" allowfullscreen></iframe>
+                        </div>
+                    </div>
 
-<div class="project-subsection">
-<h3>Technical Design</h3>
-<div class="videos-row">
+                    <div class="video-item">
+                        <div class="video-wrapper">
+                            <iframe src="https://www.youtube-nocookie.com/embed/mCUA1bDdPwY" loading="lazy" allowfullscreen></iframe>
+                        </div>
+                    </div>
 
-<div class="video-item"><div class="video-wrapper">
-<iframe src="https://www.youtube-nocookie.com/embed/e1F-PdEmDQI" title="Technical Design 1" loading="lazy" allowfullscreen></iframe>
-</div></div>
+                </div>
+            </div>
 
-<div class="video-item"><div class="video-wrapper">
-<iframe src="https://www.youtube-nocookie.com/embed/mCUA1bDdPwY" title="Technical Design 2" loading="lazy" allowfullscreen></iframe>
-</div></div>
+            <div class="project-subsection">
+                <h3>Sound Design</h3>
 
-</div>
-</div>
+                <div class="videos-row">
 
-<div class="project-subsection">
-<h3>Sound Design</h3>
+                    <div class="video-item">
+                        <div class="video-wrapper">
+                            <iframe src="https://www.youtube-nocookie.com/embed/Pzmt-SVvcpw" loading="lazy" allowfullscreen></iframe>
+                        </div>
+                    </div>
 
-<div class="videos-row">
-<div class="video-item"><div class="video-wrapper">
-<iframe src="https://www.youtube-nocookie.com/embed/Pzmt-SVvcpw" title="Sound Design 1" loading="lazy" allowfullscreen></iframe>
-</div></div>
+                    <div class="video-item">
+                        <div class="video-wrapper">
+                            <iframe src="https://www.youtube-nocookie.com/embed/6YEINSqDUWE" loading="lazy" allowfullscreen></iframe>
+                        </div>
+                    </div>
 
-<div class="video-item"><div class="video-wrapper">
-<iframe src="https://www.youtube-nocookie.com/embed/6YEINSqDUWE" title="Sound Design 2" loading="lazy" allowfullscreen></iframe>
-</div></div>
+                    <div class="video-item">
+                        <div class="video-wrapper">
+                            <iframe src="https://www.youtube-nocookie.com/embed/wz4V_IAvfWE" loading="lazy" allowfullscreen></iframe>
+                        </div>
+                    </div>
 
-<div class="video-item"><div class="video-wrapper">
-<iframe src="https://www.youtube-nocookie.com/embed/wz4V_IAvfWE" title="Sound Design 3" loading="lazy" allowfullscreen></iframe>
-</div></div>
-</div>
+                </div>
 
-<div class="videos-row">
-<div class="video-item"><div class="video-wrapper">
-<iframe src="https://www.youtube-nocookie.com/embed/V_6zx5om9ZE" title="Sound Design 4" loading="lazy" allowfullscreen></iframe>
-</div></div>
+                <div class="videos-row">
 
-<div class="video-item"><div class="video-wrapper">
-<iframe src="https://www.youtube-nocookie.com/embed/Au2UuAt9SxE" title="Sound Design 5" loading="lazy" allowfullscreen></iframe>
-</div></div>
+                    <div class="video-item">
+                        <div class="video-wrapper">
+                            <iframe src="https://www.youtube-nocookie.com/embed/V_6zx5om9ZE" loading="lazy" allowfullscreen></iframe>
+                        </div>
+                    </div>
 
-<div class="video-item"><div class="video-wrapper">
-<iframe src="https://www.youtube-nocookie.com/embed/wv5_U5VxhLw" title="Sound Design 6" loading="lazy" allowfullscreen></iframe>
-</div></div>
-</div>
+                    <div class="video-item">
+                        <div class="video-wrapper">
+                            <iframe src="https://www.youtube-nocookie.com/embed/Au2UuAt9SxE" loading="lazy" allowfullscreen></iframe>
+                        </div>
+                    </div>
 
-</div>
+                    <div class="video-item">
+                        <div class="video-wrapper">
+                            <iframe src="https://www.youtube-nocookie.com/embed/wv5_U5VxhLw" loading="lazy" allowfullscreen></iframe>
+                        </div>
+                    </div>
 
-</section>
+                </div>
+            </div>
+        </section>
 
-</div>
+    </div>
 </body>
 </html>
