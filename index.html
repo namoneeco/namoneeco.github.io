@@ -140,12 +140,33 @@
             border: none;
         }
 
+        .video-item {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .video-description {
+            margin-top: 10px;
+            font-size: 1rem;
+            font-weight: 300;
+            color: #fffdf5;
+        }
+
+        .videos-row {
+            display: flex;
+            gap: var(--space-md);
+            margin-bottom: var(--space-md);
+        }
+
         /* =========================
            BIO LAYOUT
         ========================= */
         .main-content {
             display: flex;
             gap: var(--space-md);
+            align-items: flex-start; /* prevents text box stretching */
         }
 
         .content {
@@ -160,7 +181,7 @@
             flex: 0 0 44%;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
         }
 
         .image-container img {
@@ -179,10 +200,11 @@
         .games-box {
             max-width: 700px;
             width: 100%;
-            padding: var(--space-md);
+            padding: 20px 30px;
             border: 1px solid #333;
             border-radius: 5px;
             text-align: center;
+            margin: var(--space-md) auto;
         }
 
         /* =========================
@@ -191,17 +213,6 @@
         .project-subsection {
             margin-bottom: var(--space-lg);
             padding: 0 100px;
-        }
-
-        .videos-row {
-            display: flex;
-            gap: var(--space-sm);
-            margin-bottom: var(--space-md);
-        }
-
-        .video-item {
-            flex: 1;
-            min-width: 0;
         }
 
         /* =========================
@@ -246,6 +257,7 @@
 <body>
     <div class="container">
 
+        <!-- HEADER -->
         <header>
             <div class="header-content">
                 <img src="img/nksound_logo3.png" alt="nksound logo" width="170">
@@ -274,13 +286,9 @@
 
                 <div class="content">
                     <p>Hi! I'm Nico, a sound designer living and working on Vancouver Island, Canada.</p>
-
                     <p>I got my start in digital audio during my undergrad in Sydney, Australia, studying Philosophy & Religion. I began recording bands and translating ideas into digital production.</p>
-
                     <p>Back in Canada I worked as a FoH engineer before moving into film post production.</p>
-
                     <p>My path has led me into game audio, building projects in Unreal, Wwise, and Unity.</p>
-
                     <p>I am self taught and enjoy collaborating and solving technical problems.</p>
 
                     <p>
@@ -325,12 +333,14 @@
                         <div class="video-wrapper">
                             <iframe src="https://www.youtube-nocookie.com/embed/e1F-PdEmDQI" loading="lazy" allowfullscreen></iframe>
                         </div>
+                        <p class="video-description">Implemented procedural audio for interactive game objects.</p>
                     </div>
 
                     <div class="video-item">
                         <div class="video-wrapper">
                             <iframe src="https://www.youtube-nocookie.com/embed/mCUA1bDdPwY" loading="lazy" allowfullscreen></iframe>
                         </div>
+                        <p class="video-description">Custom audio pipelines for dynamic in-game music transitions.</p>
                     </div>
 
                 </div>
@@ -345,18 +355,21 @@
                         <div class="video-wrapper">
                             <iframe src="https://www.youtube-nocookie.com/embed/Pzmt-SVvcpw" loading="lazy" allowfullscreen></iframe>
                         </div>
+                        <p class="video-description">Interactive footsteps with volume and occlusion adjustments.</p>
                     </div>
 
                     <div class="video-item">
                         <div class="video-wrapper">
                             <iframe src="https://www.youtube-nocookie.com/embed/6YEINSqDUWE" loading="lazy" allowfullscreen></iframe>
                         </div>
+                        <p class="video-description">Environmental audio layers for immersive game zones.</p>
                     </div>
 
                     <div class="video-item">
                         <div class="video-wrapper">
                             <iframe src="https://www.youtube-nocookie.com/embed/wz4V_IAvfWE" loading="lazy" allowfullscreen></iframe>
                         </div>
+                        <p class="video-description">Dynamic weapon sound design with 3D spatialization.</p>
                     </div>
 
                 </div>
@@ -367,18 +380,21 @@
                         <div class="video-wrapper">
                             <iframe src="https://www.youtube-nocookie.com/embed/V_6zx5om9ZE" loading="lazy" allowfullscreen></iframe>
                         </div>
+                        <p class="video-description">Level-specific audio implementation in Unreal Engine.</p>
                     </div>
 
                     <div class="video-item">
                         <div class="video-wrapper">
                             <iframe src="https://www.youtube-nocookie.com/embed/Au2UuAt9SxE" loading="lazy" allowfullscreen></iframe>
                         </div>
+                        <p class="video-description">Interactive UI sound feedback for player actions.</p>
                     </div>
 
                     <div class="video-item">
                         <div class="video-wrapper">
                             <iframe src="https://www.youtube-nocookie.com/embed/wv5_U5VxhLw" loading="lazy" allowfullscreen></iframe>
                         </div>
+                        <p class="video-description">Procedural environmental audio for dynamic levels.</p>
                     </div>
 
                 </div>
