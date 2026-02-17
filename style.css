@@ -8,7 +8,7 @@
 }
 
 /* =========================
-   SPACING VARIABLES
+   VARIABLES
 ========================= */
 :root {
     --space-sm: 20px;
@@ -32,10 +32,6 @@ body {
 .container {
     max-width: 1440px;
     margin: 0 auto;
-}
-
-section {
-    margin-bottom: var(--space-xl);
 }
 
 /* =========================
@@ -76,7 +72,7 @@ header {
 }
 
 /* =========================
-   TYPOGRAPHY
+   HEADERS
 ========================= */
 h2 {
     font-size: 3rem;
@@ -95,28 +91,6 @@ h3 {
     margin-bottom: var(--space-sm);
 }
 
-.content p {
-    margin-bottom: var(--space-sm);
-}
-
-.content h3,
-.content a.highlight {
-    margin-left: 20px; /* indented headings and links */
-}
-
-.content h3 + p {
-    margin-top: 5px; /* less space between Main Skills and Additional */
-}
-
-.highlight {
-    color: #f4c21c;
-    text-decoration: none;
-}
-
-.highlight:hover {
-    text-decoration: underline;
-}
-
 /* =========================
    VIDEO
 ========================= */
@@ -127,7 +101,7 @@ h3 {
 
 .video-wrapper {
     position: relative;
-    padding-bottom: 56.25%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
     border: 1px solid #333;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
@@ -140,6 +114,12 @@ h3 {
     border: none;
 }
 
+.videos-row {
+    display: flex;
+    gap: 30px;              /* more spacing between videos */
+    margin-bottom: 40px;    /* more spacing between rows */
+}
+
 .video-item {
     flex: 1;
     min-width: 0;
@@ -149,19 +129,17 @@ h3 {
 
 .video-description {
     margin-top: 10px;
-    font-size: 1rem;
+    font-size: 1.1rem;      /* slightly larger */
     font-weight: 300;
     color: #fffdf5;
-}
-
-.videos-row {
-    display: flex;
-    gap: var(--space-md);
-    margin-bottom: var(--space-md);
+    text-align: center;      /* center under video */
+    max-width: 90%;          /* narrower than video box */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* =========================
-   BIO LAYOUT
+   BIO
 ========================= */
 .main-content {
     display: flex;
@@ -177,6 +155,28 @@ h3 {
     font-size: 1.1rem;
 }
 
+.content p {
+    margin-bottom: var(--space-sm);
+}
+
+.content h3,
+.content a.highlight {
+    margin-left: 20px; /* indent headings/links */
+}
+
+.content h3 + p {
+    margin-top: 5px; /* less space between Main Skills and Additional */
+}
+
+.highlight {
+    color: #f4c21c;
+    text-decoration: none;
+}
+
+.highlight:hover {
+    text-decoration: underline;
+}
+
 .image-container {
     flex: 0 0 44%;
     display: flex;
@@ -185,10 +185,10 @@ h3 {
 }
 
 .image-container img {
-    max-width: 400px;   /* photo max width */
-    max-height: 400px;  /* photo max height */
-    width: 100%;
-    height: auto;
+    max-width: 400px;
+    max-height: 400px;
+    width: auto;
+    height: auto;         /* maintain aspect ratio */
     border-radius: 5px;
 }
 
@@ -203,16 +203,16 @@ h3 {
 .games-box {
     max-width: 700px;
     width: 100%;
-    padding: 10px 30px 20px 30px; /* top, sides, bottom */
+    padding: 20px;           /* equal padding on all sides */
     border: 1px solid #333;
     border-radius: 5px;
     text-align: center;
     margin: var(--space-md) auto;
 }
 
-/* Remove top margin for first h3 to reduce dead space */
 .games-box h3:first-of-type {
-    margin-top: 0;
+    margin-top: 0;           /* remove extra top margin */
+    margin-bottom: 20px;     /* consistent spacing between heading and text */
 }
 
 /* =========================
@@ -257,7 +257,7 @@ h3 {
     }
 
     .image-container img {
-        max-width: 300px; /* scale down for tablet/mobile */
+        max-width: 300px;
         max-height: 300px;
     }
 }
