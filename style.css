@@ -8,7 +8,7 @@
 }
 
 /* =========================
-   SPACING
+   SPACING VARIABLES
 ========================= */
 :root {
     --space-sm: 20px;
@@ -99,6 +99,15 @@ h3 {
     margin-bottom: var(--space-sm);
 }
 
+.content h3,
+.content a.highlight {
+    margin-left: 20px; /* indented headings and links */
+}
+
+.content h3 + p {
+    margin-top: 5px; /* less space between Main Skills and Additional */
+}
+
 .highlight {
     color: #f4c21c;
     text-decoration: none;
@@ -157,7 +166,7 @@ h3 {
 .main-content {
     display: flex;
     gap: var(--space-md);
-    align-items: flex-start; /* prevents text box stretching */
+    align-items: flex-start;
 }
 
 .content {
@@ -176,7 +185,10 @@ h3 {
 }
 
 .image-container img {
-    max-width: 100%;
+    max-width: 400px;   /* photo max width */
+    max-height: 400px;  /* photo max height */
+    width: 100%;
+    height: auto;
     border-radius: 5px;
 }
 
@@ -191,11 +203,16 @@ h3 {
 .games-box {
     max-width: 700px;
     width: 100%;
-    padding: 20px 30px;
+    padding: 10px 30px 20px 30px; /* top, sides, bottom */
     border: 1px solid #333;
     border-radius: 5px;
     text-align: center;
     margin: var(--space-md) auto;
+}
+
+/* Remove top margin for first h3 to reduce dead space */
+.games-box h3:first-of-type {
+    margin-top: 0;
 }
 
 /* =========================
@@ -237,5 +254,10 @@ h3 {
     .videos-row {
         flex-direction: column;
         gap: var(--space-sm);
+    }
+
+    .image-container img {
+        max-width: 300px; /* scale down for tablet/mobile */
+        max-height: 300px;
     }
 }
