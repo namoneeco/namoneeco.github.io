@@ -4,48 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>nksound</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
+
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Roboto', sans-serif;
             background-color: #1a1917;
             color: #fffdf5;
             line-height: 1.6;
             min-height: 100vh;
-            padding: 20px 20px;
+            padding: 20px;
             animation: fadeIn 1s ease-in;
         }
-        
+
         .container {
             max-width: 1440px;
             margin: 0 auto;
         }
-        
+
         header {
             position: sticky;
             top: 0;
             z-index: 1000;
-            padding: 0px 10px;
+            padding: 0 10px;
             background-color: #1a1917;
             border: 2px solid #363430;
             border-bottom-left-radius: 10px 50px;
             margin-bottom: 60px;
         }
-        
+
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 15px;
+            padding: 15px;
         }
 
         .image-header img {
@@ -55,8 +56,7 @@
 
         .header-nav {
             display: flex;
-            gap: 8%;
-            padding: 0 15px 0 0;
+            gap: 2rem;
         }
 
         .header-nav a {
@@ -71,44 +71,46 @@
             color: #f4c21c;
         }
 
-        .heading-text {
-            text-align: center;
-        }
-        
         h1 {
             font-size: 3rem;
             font-weight: 100;
-            margin-bottom: 0;
-            color: #fffdf5;
+            text-align: center;
         }
-        
-        .subtitle {
+
+        h2 {
+            font-size: 3rem;
+            font-weight: 100;
+            margin-bottom: 30px;
+            text-align: left;
+            padding-left: 100px;
+        }
+
+        h3 {
             font-size: 1.5rem;
-            font-weight: 200;
-            color: #fffdf5;
-            margin-bottom: 0;
+            font-weight: 300;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 1.2rem;
             padding-bottom: 70px;
         }
-        
-        .tagline {
-            font-size: 1.1rem;
-            font-weight: 100;
-            color: #fffdf5;
-        }
-        
+
         .video-container {
             max-width: 1000px;
             margin: 0 auto;
         }
-        
+
         .video-wrapper {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            padding-bottom: 56.25%;
             border-radius: 5px;
-            border: 1px solid #333333;
+            border: 1px solid #333;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
-        
+
         .video-wrapper iframe {
             position: absolute;
             top: 0;
@@ -117,422 +119,202 @@
             height: 100%;
             border: none;
         }
-        
+
         .main-content {
             display: flex;
             justify-content: space-between;
-            padding: 15px 0;
             gap: 4%;
+            margin-bottom: 40px;
         }
-        
+
         .content {
-            font-size: 1.2rem;
-            font-weight: 200;
+            font-size: 1.1rem;
+            font-weight: 300;
             padding: 30px;
-            border: 1px solid #333333;
+            border: 1px solid #333;
             border-radius: 5px;
             flex: 0 0 50%;
         }
-        
-        .bio-header {
-            font-size: 3rem;
-            font-weight: 100;
-            color: #fffdf5;
-            margin-bottom: 20px;
-            margin-top: 0;
-            text-align: left;
-            padding-left: 100px;
+
+        .content p {
+            margin-bottom: 18px;
         }
-        
-        .content pre {
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            font-family: 'Roboto', sans-serif;
-            margin-bottom: 20px;
+
+        .highlight {
+            color: #f4c21c;
+            text-decoration: none;
         }
-        
+
+        .highlight:hover {
+            text-decoration: underline;
+        }
+
         .image-container {
-            padding: 5px;
-            border-radius: 5px;
             flex: 0 0 44%;
             display: flex;
             justify-content: center;
             align-items: center;
         }
-        
+
         .image-container img {
-            width: auto;
-            max-width: 100%; 
-            height: auto;
+            max-width: 100%;
             border-radius: 5px;
-            display: block;
-            object-fit: contain;
         }
 
         .projects-section {
             margin-top: 80px;
-            text-align: center;
-        }
-
-        .projects-header {
-            font-size: 3rem;
-            font-weight: 100;
-            color: #fffdf5;
-            text-align: left;
-            padding-left: 100px;
-            margin-bottom: 30px;
         }
 
         .project-subsection {
             margin-bottom: 60px;
-            text-align: left;
-        }
-
-        .project-subtitle {
-            font-size: 1.5rem;
-            font-weight: 100;
-            color: #fffdf5;
-            margin-bottom: 30px;
+            padding-left: 100px;
+            padding-right: 100px;
         }
 
         .videos-row {
             display: flex;
-            justify-content: space-between;
             gap: 3%;
-            padding-bottom: 30px;
+            margin-bottom: 30px;
         }
 
         .video-item {
             flex: 1;
-            min-width: 0; /* Allows flex items to shrink properly */
-        }
-
-        .video-item .video-wrapper {
-            padding-bottom: 56.25%; /* Maintain 16:9 aspect ratio */
-            border: 1px solid #333333;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            min-width: 0;
         }
 
         :root {
             --header-height: 100px;
         }
 
-        #demoreel, 
+        #demoreel,
         #bio,
         #projects {
             scroll-margin-top: var(--header-height);
         }
-        
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
 
         @media (max-width: 768px) {
-            body {
-                padding: 20px 15px;
-            }
-            
-            h1 {
+
+            h2 {
                 font-size: 2.2rem;
+                padding-left: 20px;
             }
-            
-            .subtitle {
-                font-size: 1.2rem;
+
+            .project-subsection {
+                padding-left: 20px;
+                padding-right: 20px;
             }
-            
-            .tagline {
-                font-size: 1rem;
+
+            .main-content {
+                flex-direction: column;
             }
-            
-            .content {
-                font-size: 1rem;
-                padding: 20px;
-            }
-            
-            .bio-header {
-                font-size: 2.2rem;
-            }
-            
-            .projects-header {
-                font-size: 2.2rem;
-            }
-            
-            .project-subtitle {
-                font-size: 1.2rem;
-            }
-            
+
             .videos-row {
                 flex-direction: column;
                 gap: 20px;
             }
-            
-            .video-item {
-                flex: 1 0 100%;
-            }
-            
-            .header-content {
-                flex-direction: row;
-                text-align: left;
-            }
-
-            .heading-text {
-                text-align: center;
-            }
-
-            .image-header img {
-                width: 150px;
-                margin-bottom: 0;
-            }
-
-            .image-container img {
-                max-width: 80%;
-            }
         }
-    
-        @media (max-width: 480px) {
-            .header-nav a {
-                font-size: 1.2rem;
-            }
-            header {
-                padding: 0px 5px;
-                margin-bottom: 40px;
-            }
-            
-            body {
-                padding: 15px 10px;
-            }
-            
-            h1 {
-                font-size: 1.8rem;
-            }
-            
-            .subtitle {
-                font-size: 1.1rem;
-            }
-            
-            .bio-header {
-                font-size: 1.8rem;
-            }
-            
-            .projects-header {
-                font-size: 1.8rem;
-            }
-            
-            .project-subtitle {
-                font-size: 1.1rem;
-            }
-            
-            .main-content {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            .content,
-            .image-container {
-                flex: 0 0 100%;
-            }
-            
-            .content pre {
-                font-size: 0.9rem;
-            }
-            
-            .header-content {
-                flex-direction: column;
-                text-align: center;
-                padding: 8px 0;
-            }
 
-            .heading-text {
-                text-align: center;
-            }
-
-            .image-header img {
-                width: 100px;
-                margin-bottom: 0px;
-            }
-
-            .image-container img {
-                max-width: 70%; 
-            }
-        }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        
-        <header>
-            <div class="header-content">
-                <div class="image-header">
-                    <img src="img/nksound_logo3.png" alt="nksound logo">
-                </div>
-                <nav class="header-nav">
-                    <a href="#demoreel">reel</a>
-                    <a href="#bio">bio</a>
-                    <a href="#projects">projects</a>
-                </nav>
-            </div>
-        </header>
+<div class="container">
 
-        <div class="video-container" id="demoreel">
-            <div class="video-wrapper">
-                <iframe 
-                    src="https://www.youtube-nocookie.com/embed/4S3ipnnOekw?rel=0" 
-                    title="YouTube video player" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-                </iframe>
+    <header>
+        <div class="header-content">
+            <div class="image-header">
+                <img src="img/nksound_logo3.png" alt="nksound logo">
             </div>
+            <nav class="header-nav">
+                <a href="#demoreel">reel</a>
+                <a href="#bio">bio</a>
+                <a href="#projects">projects</a>
+            </nav>
         </div>
-    
-        <div class="heading-text">
-            <div class="subtitle">email?</div>
+    </header>
+
+    <!-- DEMO REEL -->
+    <section id="demoreel" class="video-container">
+        <div class="video-wrapper">
+            <iframe
+                src="https://www.youtube-nocookie.com/embed/4S3ipnnOekw?rel=0"
+                title="Game Audio Demo Reel"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
         </div>
-        
-        <div class="bio-header" id="bio">BIO</div>
-        
-        <main class="main-content">
+    </section>
+
+    <div class="subtitle">Contact: your@email.com</div>
+
+    <!-- BIO -->
+    <section id="bio">
+        <h2>Bio</h2>
+
+        <div class="main-content">
             <div class="content">
-                <pre>
-Hi! I'm Nico, a sound designer living and working on Vancouver Island, Canada.
+                <p>Hi! I'm Nico, a sound designer living and working on Vancouver Island, Canada.</p>
 
-I got my start in digital audio during my undergrad in Sydney, Australia, where I lived for 4 years studying Philosophy & Religion. I was recording bands in small apartments, and I began learning how to translate my ideas using the computer.
+                <p>I got my start in digital audio during my undergrad in Sydney, Australia, where I studied Philosophy & Religion. I began recording bands and learning how to translate ideas into digital production.</p>
 
-On return to Canada I began work as a FoH sound engineer for live music venues. Gradually over the years I worked on more and more audiovisual media, primarily in film post.
+                <p>Back in Canada, I worked as a FoH sound engineer before moving into audiovisual media and film post production.</p>
 
-My path to better my craft in audio has lead me to games, where I am using my previous audio experience to build projects in Wwise, Unreal, and Unity.
+                <p>My path has led me into game audio, where I build projects in Unreal, Wwise, and Unity.</p>
 
-I am self taught and enjoy collaborating and problem-solving on technical projects.
+                <p>I am self taught and enjoy collaborating and solving technical problems.</p>
 
-        <a href="https://drive.google.com/drive/folders/1eTLHjijAGSwK0U-KXaDN5UYu2ktORaiH?usp=drive_link" style="color: #f4c21c;">My CV</a>
+                <p>
+                    <a href="https://drive.google.com/drive/folders/1eTLHjijAGSwK0U-KXaDN5UYu2ktORaiH?usp=drive_link" class="highlight">My CV</a> |
+                    <a href="https://www.imdb.com/name/nm15894030/" class="highlight">IMDB Page</a>
+                </p>
 
-        <a href="https://www.imdb.com/name/nm15894030/" style="color: #f4c21c;">IMDB Page</a>
+                <h3>Main Skills</h3>
+                <p><em>Unreal, Wwise, FMOD, Reaper, Logic Pro, Pro Tools, Ableton Live, RX10, ADR, Field Recording & Sound Sourcing</em></p>
 
-<b>Main Skills:</b> <i>Unreal, Wwise, FMOD, Reaper, Logic Pro, Pro Tools, Ableton Live, RX10, ADR, Field Recording & Sound Sourcing</i>
-
-<b>Additional:</b> <i>Jira, DaVinci Resolve, Sibelius, Music Composition</i>
-                </pre>
+                <h3>Additional</h3>
+                <p><em>Jira, DaVinci Resolve, Sibelius, Music Composition</em></p>
             </div>
+
             <div class="image-container">
-                <img src="img/img_2225.jpg" alt="img_2225">
+                <img src="img/img_2225.jpg" alt="Portrait of Nico">
             </div>
-        </main>
+        </div>
+    </section>
 
-        
-            <div class="content">
-                <pre>
-<b>Currently playing:</b> <i> Valheim, Sekiro, Ape Out, Lethal Company</i>
+    <!-- PROJECTS -->
+    <section id="projects" class="projects-section">
+        <h2>Projects</h2>
 
-<b>Past favourites:</b> <i>Fallout 3, Elden Ring, Hylics, Windwaker, Pokemon Crystal</i>
-                </pre>
-            </div>
-
-<!-- PROJECTS Section -->
-        
-        <section class="projects-section" id="projects">
-            <div class="projects-header">PROJECTS</div>
-            
-<!-- Technical Design -->
-            
-            <div class="project-subsection">
-                <div class="project-subtitle">Technical Design</div>
-                <div class="videos-row">
-                    <div class="video-item">
-                        <div class="video-wrapper">
-                            <iframe 
-                                src="https://www.youtube-nocookie.com/embed/e1F-PdEmDQI?si=kZoWJWpHh5BE7g-3"
+        <div class="project-subsection">
+            <h3>Technical Design</h3>
+            <div class="videos-row">
+                <div class="video-item">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube-nocookie.com/embed/e1F-PdEmDQI"
                                 title="Technical Design Project 1"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen>
-                            </iframe>
-                        </div>
+                                loading="lazy"
+                                allowfullscreen></iframe>
                     </div>
-                    <div class="video-item">
-                        <div class="video-wrapper">
-                            <iframe 
-                                src="https://www.youtube-nocookie.com/embed/mCUA1bDdPwY?si=tKJNwmxYxnaGdYd6"
+                </div>
+                <div class="video-item">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube-nocookie.com/embed/mCUA1bDdPwY"
                                 title="Technical Design Project 2"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen>
-                            </iframe>
-                        </div>
+                                loading="lazy"
+                                allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
+        </div>
 
-<!-- Sound Design -->
-            
-            <div class="project-subsection">
-                <div class="project-subtitle">Sound Design</div>
-                <div class="videos-row">
-                    <div class="video-item">
-                        <div class="video-wrapper">
-                            <iframe 
-                                src="https://www.youtube-nocookie.com/embed/Pzmt-SVvcpw?si=0tW7XyZLQuquGY8A"
-                                title="Sound Design Project 1"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen>
-                            </iframe>
-                        </div>
-                    </div>
-                    <div class="video-item">
-                        <div class="video-wrapper">
-                            <iframe 
-                                src="https://www.youtube-nocookie.com/embed/6YEINSqDUWE?si=hjOFvkp1r7ZJozvn"
-                                title="Sound Design Project 2"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen>
-                            </iframe>
-                        </div>
-                    </div>
-                    <div class="video-item">
-                        <div class="video-wrapper">
-                            <iframe 
-                                src="https://www.youtube-nocookie.com/embed/wz4V_IAvfWE?si=WaHafbIc64mlLf1s"
-                                title="Sound Design Project 3"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen>
-                            </iframe>
-                        </div>
-                    </div>
-                </div>
-<!-- Next row -->
-                <div class="videos-row">
-                    <div class="video-item">
-                        <div class="video-wrapper">
-                            <iframe 
-                                src="https://www.youtube-nocookie.com/embed/V_6zx5om9ZE?si=OaHrFKiIW441ZEVo"
-                                title="Sound Design Project 4"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen>
-                            </iframe>
-                        </div>
-                    </div>
-                    <div class="video-item">
-                        <div class="video-wrapper">
-                            <iframe 
-                                src="https://www.youtube-nocookie.com/embed/Au2UuAt9SxE?si=hJQhgg_9sBE6Ksqm"
-                                title="Sound Design Project 5"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen>
-                            </iframe>
-                        </div>
-                    </div>
-                    <div class="video-item">
-                        <div class="video-wrapper">
-                            <iframe 
-                                src="https://www.youtube-nocookie.com/embed/wv5_U5VxhLw?si=EjE9CIN2u_N_sy5t"
-                                title="Sound Design Project 6"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen>
-                            </iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
+    </section>
+
+</div>
 </body>
 </html>
