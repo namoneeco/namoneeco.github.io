@@ -57,38 +57,37 @@ header {
     transition: padding 0.3s ease;
 }
 
-/* Top and side borders live here — no bottom border, wave closes it */
+/* Top and side borders — sides only extend halfway down */
 .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: var(--space-sm);
     transition: padding 0.3s ease;
-    border: 2px solid #363430;
-    border-bottom: none;
-}
-
-/* The SVG wave strip — sides aligned to header-content border */
-.header-wave {
-    width: calc(100% + 0px); /* full width, border handled by left/right lines below */
-    overflow: visible;
-    line-height: 0;
+    border-top: 2px solid #363430;
     position: relative;
 }
 
-/* Draw the left and right side continuations of the border down through the wave */
-.header-wave::before,
-.header-wave::after {
+/* Left and right partial borders — asymmetric for style */
+.header-content::before,
+.header-content::after {
     content: '';
     position: absolute;
     top: 0;
-    bottom: 0;
     width: 2px;
     background: #363430;
 }
 
-.header-wave::before { left: 0; }
-.header-wave::after  { right: 0; }
+.header-content::before { left: 0;  height: 20%; }
+.header-content::after  { right: 0; height: 60%; }
+
+/* The SVG wave strip */
+.header-wave {
+    width: 100%;
+    overflow: visible;
+    line-height: 0;
+    position: relative;
+}
 
 .header-wave svg {
     display: block;
@@ -269,6 +268,10 @@ h3 {
 .content h3,
 .content a.highlight {
     margin-left: 20px;
+}
+
+.content h3 {
+    font-size: 1.5rem;      /* explicitly match global h3 — .content font-size: 1.1rem doesn't affect rem units but this makes it unambiguous */
 }
 
 .content h3 + p {
