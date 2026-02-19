@@ -91,34 +91,35 @@
         <section id="projects">
             <h2>PROJECTS</h2>
 
-            <!-- Technical Design: Celeste FMOD — vertical split layout -->
+            <!-- Technical Design: Celeste FMOD — two paired rows -->
             <div class="project-subsection">
                 <h3>Technical Design</h3>
 
-                <div class="celeste-layout">
-
-                    <!-- Left: project title + two description blocks -->
-                    <div class="celeste-left">
-                        <h3 class="celeste-title">Celeste FMOD Implementation Project</h3>
-                        <p class="celeste-desc">Implemented stuff.. PLACEHOLDER.</p>
-                        <p class="celeste-desc">Custom audio pipelines for dynamic in-game music transitions.. PLACEHOLDER.</p>
-                    </div>
-
-                    <!-- Right: two stacked videos, no captions -->
-                    <div class="celeste-right">
-                        <div class="video-item">
-                            <div class="video-wrapper">
-                                <iframe src="https://www.youtube-nocookie.com/embed/e1F-PdEmDQI" loading="lazy" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                        <div class="video-item">
-                            <div class="video-wrapper">
-                                <iframe src="https://www.youtube-nocookie.com/embed/mCUA1bDdPwY" loading="lazy" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                    </div>
-
+                <!-- Project title row (no video) -->
+                <div class="celeste-title-row">
+                    <h3 class="celeste-title">Celeste FMOD Implementation Project</h3>
                 </div>
+
+                <!-- Row 1: first description + first video -->
+                <div class="celeste-row">
+                    <p class="celeste-text">Implemented stuff.. PLACEHOLDER.</p>
+                    <div class="celeste-video">
+                        <div class="video-wrapper">
+                            <iframe src="https://www.youtube-nocookie.com/embed/e1F-PdEmDQI" loading="lazy" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 2: second description + second video -->
+                <div class="celeste-row">
+                    <p class="celeste-text">Custom audio pipelines for dynamic in-game music transitions.. PLACEHOLDER.</p>
+                    <div class="celeste-video">
+                        <div class="video-wrapper">
+                            <iframe src="https://www.youtube-nocookie.com/embed/mCUA1bDdPwY" loading="lazy" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
             <!-- Sound Design: alternating single / double rows -->
