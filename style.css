@@ -35,6 +35,16 @@ body {
 }
 
 /* =========================
+   SCROLL OFFSET FIX
+========================= */
+/* Offsets anchor jumps so the section title clears the sticky header.
+   The value here matches the full header height (~90px) plus a little
+   breathing room. If you change the header size, adjust this too. */
+section[id] {
+    scroll-margin-top: 100px;
+}
+
+/* =========================
    HEADER
 ========================= */
 header {
@@ -45,6 +55,23 @@ header {
     border: 2px solid #363430;
     border-bottom-left-radius: 10px 50px;
     margin-bottom: var(--space-xl);
+    transition: padding 0.3s ease;
+}
+
+/* Compact state — triggered by JS when user scrolls down */
+header.header--compact .header-content {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+header.header--compact img {
+    width: 120px;   /* shrink logo slightly */
+    transition: width 0.3s ease;
+}
+
+header.header--compact .header-nav a {
+    font-size: 1.2rem;
+    transition: font-size 0.3s ease;
 }
 
 .header-content {
@@ -52,6 +79,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: var(--space-sm);
+    transition: padding 0.3s ease;
 }
 
 .header-nav {
@@ -64,10 +92,11 @@ header {
     text-decoration: none;
     font-weight: 300;
     font-size: 1.5rem;
-    transition: color 0.2s ease;
+    transition: color 0.2s ease, font-size 0.3s ease;
 }
 
-.header-nav a:hover {
+.header-nav a:hover,
+.header-nav a.nav--active {
     color: #f4c21c;
 }
 
