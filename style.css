@@ -15,6 +15,7 @@
     --space-md: 40px;
     --space-lg: 60px;
     --space-xl: 80px;
+    --accent: #df961a;          /* orange accent — replaces old #f4c21c everywhere */
 }
 
 /* =========================
@@ -64,7 +65,7 @@ header {
     width: 100%;
     overflow: hidden;
     line-height: 0;
-    padding: 0 2px;                 /* aligns with the side borders */
+    padding: 0 2px;
 }
 
 .header-wave svg {
@@ -72,6 +73,7 @@ header {
     width: 100%;
     height: 30px;
     transition: height 0.3s ease;
+    shape-rendering: geometricPrecision;  /* smooth, no pixellation */
 }
 
 /* The path itself transitions between wavy and straight */
@@ -123,7 +125,7 @@ header.header--compact .header-nav a {
 
 .header-nav a:hover,
 .header-nav a.nav--active {
-    color: #f4c21c;
+    color: var(--accent);
 }
 
 /* =========================
@@ -133,7 +135,7 @@ h2 {
     font-size: 3rem;
     font-weight: 100;
     text-transform: uppercase;
-    border-bottom: 2px solid #f4c21c;
+    border-bottom: 2px solid var(--accent);
     padding-bottom: 10px;
     margin-bottom: var(--space-lg);
     padding-left: 100px;
@@ -258,7 +260,7 @@ h3 {
 }
 
 .highlight {
-    color: #f4c21c;
+    color: var(--accent);
     text-decoration: none;
 }
 
