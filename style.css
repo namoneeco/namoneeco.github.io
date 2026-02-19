@@ -53,20 +53,42 @@ header {
     top: 0;
     z-index: 1000;
     background: #1a1917;
-    border: 2px solid #363430;
-    border-bottom: none;
-    overflow: hidden;               /* clips side borders flush with wave bottom */
     margin-bottom: var(--space-xl);
     transition: padding 0.3s ease;
 }
 
-/* The SVG wave strip */
-.header-wave {
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    padding: 0 2px;
+/* Top and side borders live here — no bottom border, wave closes it */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-sm);
+    transition: padding 0.3s ease;
+    border: 2px solid #363430;
+    border-bottom: none;
 }
+
+/* The SVG wave strip — sides aligned to header-content border */
+.header-wave {
+    width: calc(100% + 0px); /* full width, border handled by left/right lines below */
+    overflow: visible;
+    line-height: 0;
+    position: relative;
+}
+
+/* Draw the left and right side continuations of the border down through the wave */
+.header-wave::before,
+.header-wave::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #363430;
+}
+
+.header-wave::before { left: 0; }
+.header-wave::after  { right: 0; }
 
 .header-wave svg {
     display: block;
@@ -100,14 +122,6 @@ header.header--compact img {
 header.header--compact .header-nav a {
     font-size: 1.2rem;
     transition: font-size 0.3s ease;
-}
-
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--space-sm);
-    transition: padding 0.3s ease;
 }
 
 .header-nav {
@@ -158,7 +172,7 @@ h3 {
     margin-top: 140px;
 }
 .video-container {
-    max-width: 1000px;
+    max-width: 1150px;
     margin: 0 auto var(--space-xl);
 }
 
@@ -193,20 +207,20 @@ h3 {
 }
 
 .videos-row--single .video-item {
-    flex: 0 0 70%;
-    max-width: 860px;
+    flex: 0 0 81%;
+    max-width: 990px;
 }
 
 /* Double-video row: centred, symmetrical, wider central gap */
 .videos-row--double {
     justify-content: center;
-    gap: 180px;             /* pushed further apart */
+    gap: 180px;
 }
 
 .videos-row--double .video-item {
-    flex: 0 0 38%;
+    flex: 0 0 44%;
     min-width: 0;
-    max-width: 520px;
+    max-width: 598px;
 }
 
 /* Empty placeholder in a double row */
