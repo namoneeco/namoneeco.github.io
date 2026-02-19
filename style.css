@@ -291,10 +291,11 @@ h3 {
 ========================= */
 details.games-box {
     cursor: pointer;
+    padding: 8px 20px !important;  /* override .content padding — keep it slim */
 }
 
 details.games-box summary {
-    list-style: none;               /* remove default triangle in most browsers */
+    list-style: none;
     font-size: 1.5rem;
     font-weight: 300;
     letter-spacing: 0.12em;
@@ -303,7 +304,7 @@ details.games-box summary {
     text-decoration-color: #fffdf5;
     cursor: pointer;
     user-select: none;
-    padding: 4px 0;
+    padding: 2px 0;                 /* minimal vertical padding */
     transition: color 0.2s ease;
 }
 
@@ -314,13 +315,14 @@ details.games-box summary::-webkit-details-marker {
 
 details.games-box summary::after {
     content: ' ↓';
-    font-size: 0.9rem;
+    font-size: 1.3rem;              /* larger, clearly visible */
     font-weight: 300;
     letter-spacing: 0;
     text-decoration: none;
-    opacity: 0.6;
+    opacity: 0.8;
     transition: transform 0.2s ease;
     display: inline-block;
+    vertical-align: middle;
 }
 
 details.games-box[open] summary::after {
@@ -370,7 +372,7 @@ details.games-box h3 {
 .games-box {
     max-width: 700px;
     width: 100%;
-    padding: 20px;
+    padding: 10px 20px;             /* slim vertical, keep horizontal */
     border: 1px solid #333;
     border-radius: 5px;
     text-align: center;
