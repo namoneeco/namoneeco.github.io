@@ -117,25 +117,47 @@ h3 {
 /* =========================
    PROJECT VIDEOS
 ========================= */
+
+/* Base row — more vertical breathing room between rows */
 .videos-row {
     display: flex;
-    gap: 30px;              /* more breathing room */
-    margin-bottom: 40px;
+    gap: 40px;
+    margin-bottom: var(--space-xl); /* was 40px, now 80px */
+}
+
+/* Single-video row: video sits in the centre third */
+.videos-row--single {
+    justify-content: center;
+}
+
+.videos-row--single .video-item {
+    flex: 0 0 calc(50% - 20px); /* takes up roughly half the row width */
+    max-width: 640px;
+}
+
+/* Double-video row: two equal columns */
+.videos-row--double .video-item {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Empty placeholder in a double row (keeps layout without a second video) */
+.video-item--empty {
+    visibility: hidden;
 }
 
 .video-item {
-    flex: 1;
-    min-width: 0;
     display: flex;
     flex-direction: column;
 }
 
+/* Match bio body text size exactly */
 .video-description {
     margin-top: 14px;
-    font-size: 1.1rem;      /* slightly larger */
-    font-weight: 300;       /* thinner */
+    font-size: 1.1rem;      /* matches .content font-size */
+    font-weight: 300;
     text-align: center;
-    max-width: 85%;         /* slightly narrower than video */
+    max-width: 85%;
     margin-left: auto;
     margin-right: auto;
     color: #fffdf5;
@@ -147,7 +169,7 @@ h3 {
 .main-content {
     display: flex;
     gap: var(--space-md);
-    align-items: center;    /* vertically center image */
+    align-items: center;
 }
 
 .content {
@@ -164,11 +186,11 @@ h3 {
 
 .content h3,
 .content a.highlight {
-    margin-left: 20px;      /* indent headings + links */
+    margin-left: 20px;
 }
 
 .content h3 + p {
-    margin-top: 5px;        /* reduce space between skill sections */
+    margin-top: 5px;
 }
 
 .highlight {
@@ -187,9 +209,9 @@ h3 {
 }
 
 .image-container img {
-    max-width: 480px;       /* slightly larger than before */
+    max-width: 480px;
     width: 100%;
-    height: auto;           /* prevents distortion */
+    height: auto;
     border-radius: 5px;
     display: block;
 }
@@ -205,7 +227,7 @@ h3 {
 .games-box {
     max-width: 700px;
     width: 100%;
-    padding: 20px;          /* equal padding all sides */
+    padding: 20px;
     border: 1px solid #333;
     border-radius: 5px;
     text-align: center;
@@ -213,14 +235,14 @@ h3 {
 }
 
 .games-box h3:first-of-type {
-    margin-top: 0;          /* prevent extra top gap */
+    margin-top: 0;
 }
 
 /* =========================
    PROJECT SUBSECTION
 ========================= */
 .project-subsection {
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-xl); /* was --space-lg, now larger */
 }
 
 /* =========================
@@ -248,9 +270,20 @@ h3 {
         flex-direction: column;
     }
 
-    .videos-row {
+    .videos-row,
+    .videos-row--single,
+    .videos-row--double {
         flex-direction: column;
         gap: var(--space-sm);
+    }
+
+    .videos-row--single .video-item {
+        flex: 1;
+        max-width: 100%;
+    }
+
+    .video-item--empty {
+        display: none; /* no point showing an invisible spacer on mobile */
     }
 
     .image-container img {
