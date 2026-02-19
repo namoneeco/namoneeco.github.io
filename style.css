@@ -87,6 +87,10 @@ h2 {
 h3 {
     font-size: 1.5rem;
     font-weight: 400;
+    letter-spacing: 0.12em;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    text-decoration-color: #fffdf5;
     margin-top: var(--space-md);
     margin-bottom: var(--space-sm);
 }
@@ -118,30 +122,33 @@ h3 {
    PROJECT VIDEOS
 ========================= */
 
-/* Base row — more vertical breathing room between rows */
+/* Base row */
 .videos-row {
     display: flex;
-    gap: 40px;
-    margin-bottom: var(--space-xl); /* was 40px, now 80px */
+    margin-bottom: 100px; /* generous vertical gap between rows */
 }
 
-/* Single-video row: video sits in the centre third */
+/* Single-video row: large centred video */
 .videos-row--single {
     justify-content: center;
 }
 
 .videos-row--single .video-item {
-    flex: 0 0 calc(50% - 20px); /* takes up roughly half the row width */
-    max-width: 640px;
+    flex: 0 0 70%;          /* wider than before — dominant, prominent */
+    max-width: 860px;
 }
 
-/* Double-video row: two equal columns */
+/* Double-video row: smaller videos with plenty of breathing room */
+.videos-row--double {
+    gap: 60px;              /* more horizontal space between the two */
+}
+
 .videos-row--double .video-item {
-    flex: 1;
+    flex: 0 0 calc(40% - 30px); /* narrower columns so videos aren't cramped */
     min-width: 0;
 }
 
-/* Empty placeholder in a double row (keeps layout without a second video) */
+/* Empty placeholder in a double row */
 .video-item--empty {
     visibility: hidden;
 }
@@ -151,10 +158,10 @@ h3 {
     flex-direction: column;
 }
 
-/* Match bio body text size exactly */
+/* Description text — spaced further from the video */
 .video-description {
-    margin-top: 14px;
-    font-size: 1.1rem;      /* matches .content font-size */
+    margin-top: 24px;       /* more gap between video and caption */
+    font-size: 1.1rem;
     font-weight: 300;
     text-align: center;
     max-width: 85%;
@@ -242,7 +249,7 @@ h3 {
    PROJECT SUBSECTION
 ========================= */
 .project-subsection {
-    margin-bottom: var(--space-xl); /* was --space-lg, now larger */
+    margin-bottom: 120px;   /* generous gap between Technical Design and Sound Design */
 }
 
 /* =========================
@@ -274,10 +281,11 @@ h3 {
     .videos-row--single,
     .videos-row--double {
         flex-direction: column;
-        gap: var(--space-sm);
+        gap: var(--space-md);
     }
 
-    .videos-row--single .video-item {
+    .videos-row--single .video-item,
+    .videos-row--double .video-item {
         flex: 1;
         max-width: 100%;
     }
