@@ -15,7 +15,7 @@
         <!-- HEADER -->
         <header>
             <div class="header-content">
-                <img src="img/nksound_logo3.png" alt="nksound logo" width="170">
+                <img src="img/nksound_logo_warm4.png" alt="nksound logo" width="170">
                 <nav class="header-nav">
                     <a href="#demoreel">reel</a>
                     <a href="#bio">bio</a>
@@ -24,10 +24,10 @@
             </div>
             <!-- Sine wave bottom border — flattens when header compresses -->
             <div class="header-wave">
-                <svg viewBox="0 0 1200 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <svg viewBox="0 0 1200 40" preserveAspectRatio="none" shape-rendering="geometricPrecision" xmlns="http://www.w3.org/2000/svg">
                     <path class="wave-path"
-                        d="M0,20 C75,5 150,35 225,20 C300,5 375,35 450,20 C525,5 600,35 675,20 C750,5 825,35 900,20 C975,5 1050,35 1125,20 L1200,20"
-                        fill="none" stroke="#f4c21c" stroke-width="1.5"/>
+                        d="M0,20 C37,5 75,35 112,20 C150,5 187,35 225,20 C262,5 300,35 337,20 C375,5 412,35 450,20 C487,5 525,35 562,20 C600,5 637,35 675,20 C712,5 750,35 787,20 C825,5 862,35 900,20 C937,5 975,35 1012,20 C1050,5 1087,35 1125,20 C1162,5 1200,20 1200,20"
+                        fill="none" stroke="#363430" stroke-width="2"/>
                 </svg>
             </div>
         </header>
@@ -177,8 +177,8 @@
         const header = document.querySelector('header');
         const wavePath = document.querySelector('.wave-path');
 
-        const wavyD  = "M0,20 C75,5 150,35 225,20 C300,5 375,35 450,20 C525,5 600,35 675,20 C750,5 825,35 900,20 C975,5 1050,35 1125,20 L1200,20";
-        const straightD = "M0,20 C75,20 150,20 225,20 C300,20 375,20 450,20 C525,20 600,20 675,20 C750,20 825,20 900,20 C975,20 1050,20 1125,20 L1200,20";
+        const wavyD  = "M0,20 C37,5 75,35 112,20 C150,5 187,35 225,20 C262,5 300,35 337,20 C375,5 412,35 450,20 C487,5 525,35 562,20 C600,5 637,35 675,20 C712,5 750,35 787,20 C825,5 862,35 900,20 C937,5 975,35 1012,20 C1050,5 1087,35 1125,20 C1162,5 1200,20 1200,20";
+        const straightD = "M0,20 C37,20 75,20 112,20 C150,20 187,20 225,20 C262,20 300,20 337,20 C375,20 412,20 450,20 C487,20 525,20 562,20 C600,20 637,20 675,20 C712,20 750,20 787,20 C825,20 862,20 900,20 C937,20 975,20 1012,20 C1050,20 1087,20 1125,20 C1162,20 1200,20 1200,20";
 
         function updateHeader() {
             if (window.scrollY > 10) {
