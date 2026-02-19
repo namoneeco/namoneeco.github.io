@@ -22,6 +22,14 @@
                     <a href="#projects">projects</a>
                 </nav>
             </div>
+            <!-- Sine wave bottom border — flattens when header compresses -->
+            <div class="header-wave">
+                <svg viewBox="0 0 1200 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="wave-path"
+                        d="M0,20 C75,5 150,35 225,20 C300,5 375,35 450,20 C525,5 600,35 675,20 C750,5 825,35 900,20 C975,5 1050,35 1125,20 L1200,20"
+                        fill="none" stroke="#f4c21c" stroke-width="1.5"/>
+                </svg>
+            </div>
         </header>
 
         <!-- DEMO REEL -->
@@ -167,12 +175,18 @@
     <script>
         // ── 1. COMPACT HEADER ON SCROLL ──────────────────────────────────
         const header = document.querySelector('header');
+        const wavePath = document.querySelector('.wave-path');
+
+        const wavyD  = "M0,20 C75,5 150,35 225,20 C300,5 375,35 450,20 C525,5 600,35 675,20 C750,5 825,35 900,20 C975,5 1050,35 1125,20 L1200,20";
+        const straightD = "M0,20 C75,20 150,20 225,20 C300,20 375,20 450,20 C525,20 600,20 675,20 C750,20 825,20 900,20 C975,20 1050,20 1125,20 L1200,20";
 
         function updateHeader() {
             if (window.scrollY > 10) {
                 header.classList.add('header--compact');
+                wavePath.setAttribute('d', straightD);
             } else {
                 header.classList.remove('header--compact');
+                wavePath.setAttribute('d', wavyD);
             }
         }
 
