@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>nksound</title>
 
-<!-- Link to external CSS -->
+    <!-- Link to external CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="container">
 
-<!-- HEADER -->
+        <!-- HEADER -->
         <header>
             <div class="header-content">
                 <img src="img/nksound_logo_warm4.png" alt="nksound logo" width="200">
@@ -22,7 +22,7 @@
                     <a href="#projects">projects</a>
                 </nav>
             </div>
-<!-- Sine wave bottom border — flattens when header compresses -->
+            <!-- Sine wave bottom border — flattens when header compresses -->
             <div class="header-wave">
                 <svg viewBox="0 0 1200 40" preserveAspectRatio="none" shape-rendering="geometricPrecision" xmlns="http://www.w3.org/2000/svg">
                     <path class="wave-path"
@@ -32,10 +32,10 @@
             </div>
         </header>
 
-<!-- DEMO REEL -->
+        <!-- DEMO REEL -->
         <section id="demoreel" class="video-container">
             <div class="video-wrapper">
-                <iframe 
+                <iframe
                     src="https://www.youtube-nocookie.com/embed/4S3ipnnOekw?rel=0"
                     title="Game Audio Demo Reel"
                     loading="lazy"
@@ -44,7 +44,7 @@
             </div>
         </section>
 
-<!-- BIO -->
+        <!-- BIO -->
         <section id="bio">
             <h2>BIO</h2>
             <div class="main-content">
@@ -76,7 +76,7 @@
             </div>
         </section>
 
-<!-- GAMES SECTION -->
+        <!-- GAMES SECTION -->
         <section class="games-section">
             <details class="content games-box">
                 <summary class="games-summary">Currently Playing</summary>
@@ -87,36 +87,45 @@
             </details>
         </section>
 
-<!-- PROJECTS -->
+        <!-- PROJECTS -->
         <section id="projects">
             <h2>PROJECTS</h2>
 
-<!-- Technical Design: one double row -->
+            <!-- Technical Design: Celeste FMOD — vertical split layout -->
             <div class="project-subsection">
                 <h3>Technical Design</h3>
 
-                <div class="videos-row videos-row--double">
-                    <div class="video-item">
-                        <div class="video-wrapper">
-                            <iframe src="https://www.youtube-nocookie.com/embed/e1F-PdEmDQI" loading="lazy" allowfullscreen></iframe>
-                        </div>
-                        <p class="video-description">Implemented stuff.. PLACEHOLDER.</p>
-                    </div>
-                    <div class="video-item">
-                        <div class="video-wrapper">
-                            <iframe src="https://www.youtube-nocookie.com/embed/mCUA1bDdPwY" loading="lazy" allowfullscreen></iframe>
-                        </div>
-                        <p class="video-description">Custom audio pipelines for dynamic in-game music transitions.. PLACEHOLDER.</p>
-                    </div>
-                </div>
+                <div class="celeste-layout">
 
+                    <!-- Left: project title + two description blocks -->
+                    <div class="celeste-left">
+                        <h3 class="celeste-title">Celeste FMOD Implementation Project</h3>
+                        <p class="celeste-desc">Implemented stuff.. PLACEHOLDER.</p>
+                        <p class="celeste-desc">Custom audio pipelines for dynamic in-game music transitions.. PLACEHOLDER.</p>
+                    </div>
+
+                    <!-- Right: two stacked videos, no captions -->
+                    <div class="celeste-right">
+                        <div class="video-item">
+                            <div class="video-wrapper">
+                                <iframe src="https://www.youtube-nocookie.com/embed/e1F-PdEmDQI" loading="lazy" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="video-item">
+                            <div class="video-wrapper">
+                                <iframe src="https://www.youtube-nocookie.com/embed/mCUA1bDdPwY" loading="lazy" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
 
-<!-- Sound Design: alternating single / double rows -->
+            <!-- Sound Design: alternating single / double rows -->
             <div class="project-subsection">
                 <h3>Sound Design</h3>
 
-<!-- Row 1: single -->
+                <!-- Row 1: single -->
                 <div class="videos-row videos-row--single">
                     <div class="video-item">
                         <div class="video-wrapper">
@@ -126,7 +135,7 @@
                     </div>
                 </div>
 
-<!-- Row 2: double -->
+                <!-- Row 2: double -->
                 <div class="videos-row videos-row--double">
                     <div class="video-item">
                         <div class="video-wrapper">
@@ -142,7 +151,7 @@
                     </div>
                 </div>
 
-<!-- Row 3: single -->
+                <!-- Row 3: single -->
                 <div class="videos-row videos-row--single">
                     <div class="video-item">
                         <div class="video-wrapper">
@@ -152,7 +161,7 @@
                     </div>
                 </div>
 
-<!-- Row 4: double -->
+                <!-- Row 4: double -->
                 <div class="videos-row videos-row--double">
                     <div class="video-item">
                         <div class="video-wrapper">
