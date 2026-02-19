@@ -57,7 +57,7 @@ header {
     transition: padding 0.3s ease;
 }
 
-/* Top and side borders — sides only extend halfway down */
+/* Full-height side borders — connect top-down to meet the wave */
 .header-content {
     display: flex;
     justify-content: space-between;
@@ -65,28 +65,18 @@ header {
     padding: var(--space-sm);
     transition: padding 0.3s ease;
     border-top: 2px solid #363430;
+    border-left: 2px solid #363430;
+    border-right: 2px solid #363430;
     position: relative;
 }
 
-/* Left and right partial borders — asymmetric for style */
-.header-content::before,
-.header-content::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    width: 2px;
-    background: #363430;
-}
-
-.header-content::before { left: 0;  height: 20%; }
-.header-content::after  { right: 0; height: 60%; }
-
-/* The SVG wave strip */
+/* The SVG wave strip — left/right edges align with header-content border */
 .header-wave {
     width: 100%;
-    overflow: visible;
+    overflow: hidden;
     line-height: 0;
     position: relative;
+    padding: 0 2px;                  /* inset by border width so wave aligns inside borders */
 }
 
 .header-wave svg {
@@ -156,8 +146,8 @@ h2 {
 
 h3 {
     font-size: 1.5rem;
-    font-weight: 300;
-    letter-spacing: 0.12em;
+    font-weight: 200;
+    letter-spacing: 0.18em;
     text-decoration: underline;
     text-underline-offset: 6px;
     text-decoration-color: #fffdf5;
@@ -300,14 +290,14 @@ details.games-box {
 details.games-box summary {
     list-style: none;
     font-size: 1.5rem;
-    font-weight: 300;
-    letter-spacing: 0.12em;
+    font-weight: 200;
+    letter-spacing: 0.18em;
     text-decoration: underline;
     text-underline-offset: 6px;
     text-decoration-color: #fffdf5;
     cursor: pointer;
     user-select: none;
-    padding: 2px 0;                 /* minimal vertical padding */
+    padding: 2px 0;
     transition: color 0.2s ease;
 }
 
@@ -384,6 +374,68 @@ details.games-box h3 {
 
 .games-box h3:first-of-type {
     margin-top: 0;
+}
+
+/* =========================
+   CELESTE PROJECT LAYOUT
+========================= */
+
+/* Outer wrapper: left text col + right videos col */
+.celeste-layout {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+/* Left column: project title + two description blocks */
+.celeste-left {
+    flex: 0 0 35%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 4px;               /* optical alignment with video tops */
+}
+
+.celeste-title {
+    font-size: 1.5rem;
+    font-weight: 200;
+    letter-spacing: 0.18em;
+    text-decoration: none;          /* override global h3 underline */
+    border-top: 2px solid #363430;  /* separator line above title */
+    padding-top: var(--space-sm);
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+.celeste-desc {
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #fffdf5;
+    flex: 1;                        /* each desc takes equal vertical space */
+    display: flex;
+    align-items: center;            /* vertically centre text within its slot */
+    margin: 0;
+    padding: var(--space-md) 0;
+}
+
+/* Border line beneath the second (last) description block */
+.celeste-desc:last-of-type {
+    border-bottom: 2px solid #363430;
+    padding-bottom: var(--space-md);
+}
+
+/* Right column: two stacked videos */
+.celeste-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.celeste-right .video-item {
+    width: 100%;
 }
 
 /* =========================
