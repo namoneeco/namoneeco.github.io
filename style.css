@@ -147,7 +147,7 @@ h2 {
 h3 {
     font-size: 1.5rem;
     font-weight: 200;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.12em;
     text-decoration: underline;
     text-underline-offset: 6px;
     text-decoration-color: #fffdf5;
@@ -291,7 +291,7 @@ details.games-box summary {
     list-style: none;
     font-size: 1.5rem;
     font-weight: 200;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.12em;
     text-decoration: underline;
     text-underline-offset: 6px;
     text-decoration-color: #fffdf5;
@@ -389,19 +389,20 @@ details.games-box h3 {
 
 /* Left column: project title + two description blocks */
 .celeste-left {
-    flex: 0 0 35%;
-    max-width: 420px;
+    flex: 0 0 30%;
+    max-width: 360px;
     display: flex;
     flex-direction: column;
-    padding-top: 4px;               /* optical alignment with video tops */
 }
 
 .celeste-title {
     font-size: 1.5rem;
     font-weight: 200;
-    letter-spacing: 0.18em;
-    text-decoration: none;          /* override global h3 underline */
-    border-top: 2px solid #363430;  /* separator line above title */
+    letter-spacing: 0.12em;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    text-decoration-color: #fffdf5;
+    border-top: 2px solid #363430;
     padding-top: var(--space-sm);
     margin-top: 0;
     margin-bottom: 0;
@@ -413,29 +414,40 @@ details.games-box h3 {
     font-weight: 300;
     line-height: 1.6;
     color: #fffdf5;
-    flex: 1;                        /* each desc takes equal vertical space */
+    flex: 1;                        /* each desc fills its half of the left column */
     display: flex;
-    align-items: center;            /* vertically centre text within its slot */
+    align-items: center;
     margin: 0;
     padding: var(--space-md) 0;
 }
 
-/* Border line beneath the second (last) description block */
+/* Border line beneath the second description block */
 .celeste-desc:last-of-type {
     border-bottom: 2px solid #363430;
     padding-bottom: var(--space-md);
 }
 
-/* Right column: two stacked videos */
+/* Right column: two stacked videos — same width as old double-row videos */
 .celeste-right {
+    flex: 0 0 598px;                /* matches old max-width: 598px per video */
+    max-width: 598px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;                         /* no gap — heights must match left col exactly */
+}
+
+/* Each video slot mirrors the flex: 1 of its paired text block */
+.celeste-right .video-item {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 60px;
+    justify-content: center;
+    padding: var(--space-md) 0;     /* matches celeste-desc padding */
 }
 
-.celeste-right .video-item {
-    width: 100%;
+/* Last video gets bottom padding to match celeste-desc:last-of-type */
+.celeste-right .video-item:last-child {
+    padding-bottom: var(--space-md);
 }
 
 /* =========================
