@@ -167,14 +167,16 @@ h3 {
     max-width: 860px;
 }
 
-/* Double-video row: smaller videos with plenty of breathing room */
+/* Double-video row: centred, symmetrical, generous central gap */
 .videos-row--double {
-    gap: 60px;              /* more horizontal space between the two */
+    justify-content: center;
+    gap: 80px;
 }
 
 .videos-row--double .video-item {
-    flex: 0 0 calc(40% - 30px); /* narrower columns so videos aren't cramped */
+    flex: 0 0 38%;
     min-width: 0;
+    max-width: 520px;
 }
 
 /* Empty placeholder in a double row */
