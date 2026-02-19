@@ -154,7 +154,7 @@ h3 {
 /* Base row */
 .videos-row {
     display: flex;
-    margin-bottom: 100px; /* generous vertical gap between rows */
+    margin-bottom: 200px;   /* doubled from 100px */
 }
 
 /* Single-video row: large centred video */
@@ -163,14 +163,14 @@ h3 {
 }
 
 .videos-row--single .video-item {
-    flex: 0 0 70%;          /* wider than before — dominant, prominent */
+    flex: 0 0 70%;
     max-width: 860px;
 }
 
-/* Double-video row: centred, symmetrical, generous central gap */
+/* Double-video row: centred, symmetrical, wider central gap */
 .videos-row--double {
     justify-content: center;
-    gap: 80px;
+    gap: 120px;             /* increased from 80px */
 }
 
 .videos-row--double .video-item {
@@ -189,9 +189,9 @@ h3 {
     flex-direction: column;
 }
 
-/* Description text — spaced further from the video */
+/* Description text */
 .video-description {
-    margin-top: 24px;       /* more gap between video and caption */
+    margin-top: 48px;       /* doubled from 24px */
     font-size: 1.1rem;
     font-weight: 300;
     text-align: center;
@@ -280,7 +280,13 @@ h3 {
    PROJECT SUBSECTION
 ========================= */
 .project-subsection {
-    margin-bottom: 120px;   /* generous gap between Technical Design and Sound Design */
+    margin-bottom: 120px;
+}
+
+/* Subsection subtitles — centred with generous space before the videos */
+.project-subsection h3 {
+    text-align: center;
+    margin-bottom: 60px;    /* more air between subtitle and first video row */
 }
 
 /* =========================
